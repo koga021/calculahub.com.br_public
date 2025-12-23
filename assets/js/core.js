@@ -85,8 +85,8 @@ const App = {
         const pageWidth = pageSize.width ? pageSize.width : pageSize.getWidth();
         const margin = 14;
 
-        doc.setFontSize(8);
-        doc.setTextColor(100); // Gray color
+        doc.setFontSize(10);
+        doc.setTextColor(50); // Darker gray color
         const text = "Resultados com caráter informativo e educacional. Valores e cálculos são estimativas e não substituem avaliação profissional.";
 
         // Center text at the bottom
