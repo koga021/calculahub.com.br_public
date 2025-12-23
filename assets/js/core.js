@@ -52,6 +52,21 @@ const App = {
             return new coreui.Tooltip(tooltipTriggerEl);
         });
 
+        // Initialize CoreUI Sidebar explicitly
+        const sidebarEl = document.getElementById('sidebar');
+        if (sidebarEl && typeof coreui !== 'undefined' && coreui.Sidebar) {
+            const sidebar = coreui.Sidebar.getOrCreateInstance(sidebarEl);
+
+            // Handle toggle button manually if automatic data-attributes fail (common in local file://)
+            const toggler = document.querySelector('[data-coreui-toggle="sidebar"]');
+            if (toggler) {
+                toggler.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    sidebar.toggle();
+                });
+            }
+        }
+
         // Init Currency Masks
         const moneyInputs = document.querySelectorAll('.money-mask');
         moneyInputs.forEach(input => {
