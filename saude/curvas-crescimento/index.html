@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Calculadora de Curvas de Crescimento OMS (0-24 meses) | CalculaHub</title>
+    <meta name="description" content="Monitore o crescimento do seu bebê com a Calculadora de Curvas da OMS. Verifique Peso, Altura e Perímetro Cefálico com precisão (Z-Score).">
+
+    <!-- CoreUI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.2.0/dist/css/coreui.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3058170678556434"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Sidebar Template -->
+<div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+    <div class="sidebar-brand d-none d-md-flex">
+        <svg class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
+            <rect width="100%" height="100%" fill="#321fdb" />
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white"
+                font-size="20">CalculaHub</text>
+        </svg>
+        <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
+            <rect width="100%" height="100%" fill="#321fdb" />
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="20">CH</text>
+        </svg>
+    </div>
+    <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+        <li class="nav-item">
+            <a class="nav-link " href="../../index.html">
+                <i class="nav-icon fas fa-tachometer-alt"></i> Dashboard
+            </a>
+        </li>
+        <li class="nav-title">Calculadoras</li>
+        <li class="nav-group ">
+            <a class="nav-link nav-group-toggle" href="#">
+                <i class="nav-icon fas fa-money-bill-wave"></i> Financeiras
+            </a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/juros-compostos/"><span class="nav-icon"></span> Juros
+                        Compostos</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/simulador-financiamento-price-sac/"><span
+                            class="nav-icon"></span> Financiamento (SAC/PRICE)</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/simulador-consorcio/"><span class="nav-icon"></span>
+                        Consórcio</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/juros-simples/"><span class="nav-icon"></span> Juros Simples</a>
+                </li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/primeiro-milhao/"><span class="nav-icon"></span> Primeiro
+                        Milhão</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/salario-liquido/"><span class="nav-icon"></span> Salário Líquido
+                        CLT</a></li>
+            </ul>
+        </li>
+        <li class="nav-group show">
+            <a class="nav-link nav-group-toggle" href="#">
+                <i class="nav-icon fas fa-heartbeat"></i> Saúde
+            </a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link " href="../../saude/imc/"><span
+                            class="nav-icon"></span> IMC</a></li>
+                <li class="nav-item"><a class="nav-link active"
+                        href="../../saude/curvas-crescimento/"><span class="nav-icon"></span> Curvas de
+                        Crescimento</a></li>
+            </ul>
+        </li>
+    </ul>
+    <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+</div>
+
+    <div class="wrapper d-flex flex-column min-vh-100 bg-light">
+        <!-- Header Template -->
+<header class="header header-sticky mb-4 d-md-none">
+    <div class="container-fluid">
+        <button class="header-toggler px-md-0 me-md-3 d-md-none" type="button" data-coreui-toggle="sidebar"
+            data-coreui-target="#sidebar">
+            <i class="fas fa-bars"></i>
+        </button>
+        <a class="header-brand d-md-none" href="#">CalculaHub</a>
+    </div>
+</header>
+
+        <div class="body flex-grow-1 px-3">
+            <div class="container-lg">
+                <div class="ad-slot ad-sidebar">
+    <!-- TOPO_anuncio -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3058170678556434" data-ad-slot="5209310594"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+
+<div class="row">
+    <!-- Main Content Column -->
+    <div class="col-lg-8">
+
+        <!-- Calculator Card -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h1 class="h3 m-0">Curvas de Crescimento OMS (0-24 meses)</h1>
+            </div>
+            <div class="card-body">
+                <p class="text-body-secondary">Acompanhe o desenvolvimento do seu bebê utilizando o
+                    padrão ouro da Organização Mundial da Saúde.</p>
+
+                <!-- Inputs Form -->
+                <form id="calcForm" class="mb-4">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Sexo do Bebê</label>
+                        <div class="d-flex gap-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sex" id="sexM" value="boys" checked>
+                                <label class="form-check-label" for="sexM">Menino</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sex" id="sexF" value="girls">
+                                <label class="form-check-label" for="sexF">Menina</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Data de Nascimento</label>
+                            <input type="date" class="form-control" id="dob" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Data da Medição</label>
+                            <input type="date" class="form-control" id="measureDate" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="isPremature">
+                        <label class="form-check-label" for="isPremature">Bebê Prematuro?</label>
+                    </div>
+
+                    <div id="prematureFields" class="mb-3 d-none p-3 bg-light border rounded">
+                        <label class="form-label">Semanas de Gestação</label>
+                        <input type="number" class="form-control" id="gestationalWeeks" min="24" max="36"
+                            placeholder="Ex: 34">
+                        <small class="text-muted">Apenas para bebês nascidos com menos de 37
+                            semanas.</small>
+                    </div>
+
+                    <hr>
+                    <h5 class="mb-3">Medidas</h5>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Peso (kg)</label>
+                            <input type="number" step="0.01" class="form-control" id="weight" placeholder="Ex: 6.50">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Comprimento (cm)</label>
+                            <input type="number" step="0.1" class="form-control" id="length" placeholder="Ex: 62.0">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Perímetro (cm) <span class="text-muted small">(Opc)</span></label>
+                            <input type="number" step="0.1" class="form-control" id="head" placeholder="Ex: 40.5">
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2 mt-4">
+                        <div class="btn-group">
+                            <button type="submit" class="btn btn-primary text-white">Calcular
+                                Z-Scores</button>
+                            <button type="button" class="btn btn-outline-danger" id="resetBtn" title="Limpar campos">
+                                <i class="fas fa-trash-alt"></i> Limpar
+                            </button>
+                        </div>
+                        <button type="button" class="btn btn-outline-secondary" id="shareBtn">
+                            <i class="fas fa-share-alt"></i> Compartilhar Link
+                        </button>
+                    </div>
+                </form>
+
+                <hr>
+
+                <!-- Results Section -->
+                <div id="resultContainer" class="d-none mt-4">
+                    <h4 class="mb-3 text-center">Resultados</h4>
+
+                    <div class="alert alert-info d-flex justify-content-between align-items-center">
+                        <span><strong>Idade na Medição:</strong> <span id="resAge">0 meses</span></span>
+                        <span id="resCorrected" class="badge bg-warning text-dark d-none">Idade
+                            Corrigida: 0m</span>
+                    </div>
+
+                    <!-- Cards Area -->
+                    <div class="row g-3">
+                        <!-- Weight for Age -->
+                        <div class="col-md-4">
+                            <div class="card border-start-4 border-start-primary shadow-sm h-100" id="cardWFA">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title text-muted mb-2">Peso x Idade</h6>
+                                    <h3 class="fw-bold mb-1" id="zWFA">--</h3>
+                                    <span class="badge bg-secondary mb-2" id="badgeWFA">--</span>
+                                    <p class="small text-muted m-0" id="descWFA">--</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Length for Age -->
+                        <div class="col-md-4">
+                            <div class="card border-start-4 border-start-success shadow-sm h-100" id="cardLFA">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title text-muted mb-2">Comprimento x Idade</h6>
+                                    <h3 class="fw-bold mb-1" id="zLFA">--</h3>
+                                    <span class="badge bg-secondary mb-2" id="badgeLFA">--</span>
+                                    <p class="small text-muted m-0" id="descLFA">--</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Head for Age -->
+                        <div class="col-md-4" id="blockHCFA">
+                            <div class="card border-start-4 border-start-info shadow-sm h-100" id="cardHCFA">
+                                <div class="card-body text-center">
+                                    <h6 class="card-title text-muted mb-2">Perímetro Cefálico</h6>
+                                    <h3 class="fw-bold mb-1" id="zHCFA">--</h3>
+                                    <span class="badge bg-secondary mb-2" id="badgeHCFA">--</span>
+                                    <p class="small text-muted m-0" id="descHCFA">--</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-light border mt-4 small">
+                        <strong>Entenda o Z-Score:</strong><br>
+                        <ul>
+                            <li><strong>Entre -2 e +2:</strong> Crescimento Adequado.</li>
+                            <li><strong>Maior que +2:</strong> Crescimento Elevado (Atenção).</li>
+                            <li><strong>Menor que -2:</strong> Baixo (Alerta).</li>
+                            <li><strong>Menor que -3:</strong> Muito Baixo (Grave).</li>
+                        </ul>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <button type="button" class="btn btn-sm btn-outline-danger js-export-pdf" id="btnExportPDF">
+                            <i class="fas fa-file-pdf"></i> Baixar Relatório (PDF)
+                        </button>
+                        <p class="text-muted small mt-2 mb-0">Este relatório é informativo e não
+                            substitui avaliação médica.</p>
+                    </div>
+                </div>
+
+                <!-- Placeholder state -->
+                <div id="placeholderState" class="text-center py-5">
+                    <div class="ad-slot ad-top">
+    <!-- Lateral_esquerda_vertical -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3058170678556434" data-ad-slot="5635211225"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+                    <p class="text-muted mt-3 small">Preencha os dados acima para ver a análise.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SEO Content -->
+        <div class="card mb-4 seo-content">
+            <div class="card-body">
+                <h2>Como funciona a Curva de Crescimento da OMS?</h2>
+                <p>A <strong>Organização Mundial da Saúde (OMS)</strong> estabeleceu em 2006 os padrões
+                    internacionais de crescimento infantil. Diferente de tabelas antigas que apenas
+                    descreviam como as crianças cresciam, este padrão descreve como as crianças
+                    <strong>devem crescer</strong> em condições ideais de saúde e nutrição.
+                </p>
+
+                <h3>O Método LMS e o Z-Score</h3>
+                <p>Esta calculadora utiliza o método estatístico <strong>LMS</strong> (Lambda, Mu,
+                    Sigma) para calcular o <strong>Z-Score</strong>. O Z-Score é a medida mais precisa
+                    para avaliar o crescimento, pois considera a distribuição estatística da população.
+                </p>
+                <ul>
+                    <li><strong>Peso para Idade:</strong> Avalia se o peso está adequado para a idade
+                        cronológica. Importante para detectar baixo peso ou excesso.</li>
+                    <li><strong>Comprimento para Idade:</strong> Reflete o crescimento linear acumulado.
+                        Baixa estatura pode indicar desnutrição crônica.</li>
+                    <li><strong>Perímetro Cefálico:</strong> Fundamental nos primeiros 2 anos para
+                        acompanhar o desenvolvimento neurológico.</li>
+                </ul>
+
+                <h3>Atenção aos Prematuros</h3>
+                <p>Para bebês nascidos com menos de 37 semanas, é essencial utilizar a <strong>Idade
+                        Corrigida</strong> até os 2 anos de idade. Nossa calculadora faz esse ajuste
+                    automaticamente, garantindo que você não compare seu bebê prematuro com tabelas de
+                    nascidos a termo de forma injusta.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Right Sidebar / Ads -->
+    <div class="col-lg-4">
+        <div class="card mb-4">
+            <div class="card-header">Veja Também</div>
+            <div class="list-group list-group-flush">
+                <a href="../imc/" class="list-group-item list-group-item-action">Calculadora de IMC</a>
+                <a href="../../financeiras/juros-compostos/" class="list-group-item list-group-item-action">Calculadora
+                    de Juros Compostos</a>
+                <a href="../../financeiras/primeiro-milhao/" class="list-group-item list-group-item-action">Calculadora
+                    do Primeiro Milhão</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+            </div>
+        </div>
+
+        <!-- Footer Template -->
+<footer class="footer">
+    <div>CalculaHub © 2025.</div>
+</footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.2.0/dist/js/coreui.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
+    
+    <!-- PDF Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <script src="../../assets/js/core.js"></script>
+    <script src="../../assets/js/share.js"></script>
+    
+    <script src="../../assets/js/calculators/who-data.js"></script>
+    <script src="../../assets/js/calculators/curvas-crescimento.js"></script>
+    
+</body>
+
+</html>

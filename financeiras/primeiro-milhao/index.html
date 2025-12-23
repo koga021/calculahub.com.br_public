@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Calculadora do Primeiro Milhão - Planeje sua Independência Financeira | CalculaHub</title>
+    <meta name="description" content="Descubra quanto tempo levará para atingir seu primeiro milhão. Simule aportes mensais e taxas de juros para planejar sua independência financeira.">
+
+    <!-- CoreUI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.2.0/dist/css/coreui.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3058170678556434"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Sidebar Template -->
+<div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+    <div class="sidebar-brand d-none d-md-flex">
+        <svg class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
+            <rect width="100%" height="100%" fill="#321fdb" />
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white"
+                font-size="20">CalculaHub</text>
+        </svg>
+        <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
+            <rect width="100%" height="100%" fill="#321fdb" />
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="20">CH</text>
+        </svg>
+    </div>
+    <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+        <li class="nav-item">
+            <a class="nav-link " href="../../index.html">
+                <i class="nav-icon fas fa-tachometer-alt"></i> Dashboard
+            </a>
+        </li>
+        <li class="nav-title">Calculadoras</li>
+        <li class="nav-group show">
+            <a class="nav-link nav-group-toggle" href="#">
+                <i class="nav-icon fas fa-money-bill-wave"></i> Financeiras
+            </a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/juros-compostos/"><span class="nav-icon"></span> Juros
+                        Compostos</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/simulador-financiamento-price-sac/"><span
+                            class="nav-icon"></span> Financiamento (SAC/PRICE)</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/simulador-consorcio/"><span class="nav-icon"></span>
+                        Consórcio</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/juros-simples/"><span class="nav-icon"></span> Juros Simples</a>
+                </li>
+                <li class="nav-item"><a class="nav-link active"
+                        href="../../financeiras/primeiro-milhao/"><span class="nav-icon"></span> Primeiro
+                        Milhão</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/salario-liquido/"><span class="nav-icon"></span> Salário Líquido
+                        CLT</a></li>
+            </ul>
+        </li>
+        <li class="nav-group ">
+            <a class="nav-link nav-group-toggle" href="#">
+                <i class="nav-icon fas fa-heartbeat"></i> Saúde
+            </a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link " href="../../saude/imc/"><span
+                            class="nav-icon"></span> IMC</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../saude/curvas-crescimento/"><span class="nav-icon"></span> Curvas de
+                        Crescimento</a></li>
+            </ul>
+        </li>
+    </ul>
+    <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+</div>
+
+    <div class="wrapper d-flex flex-column min-vh-100 bg-light">
+        <!-- Header Template -->
+<header class="header header-sticky mb-4 d-md-none">
+    <div class="container-fluid">
+        <button class="header-toggler px-md-0 me-md-3 d-md-none" type="button" data-coreui-toggle="sidebar"
+            data-coreui-target="#sidebar">
+            <i class="fas fa-bars"></i>
+        </button>
+        <a class="header-brand d-md-none" href="#">CalculaHub</a>
+    </div>
+</header>
+
+        <div class="body flex-grow-1 px-3">
+            <div class="container-lg">
+                <!-- AdSense Top -->
+<div class="ad-slot ad-sidebar">
+    <!-- TOPO_anuncio -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3058170678556434" data-ad-slot="5209310594"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h1 class="h3 m-0">Calculadora do Primeiro Milhão</h1>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-success" role="alert">
+                    <i class="fas fa-bullseye"></i> Planeje sua meta de atingir R$ 1.000.000,00!
+                </div>
+
+                <div class="row">
+                    <!-- Form -->
+                    <div class="col-md-5">
+                        <form id="calcForm">
+                            <div class="mb-3">
+                                <label class="form-label">Quanto já tenho (R$)</label>
+                                <input type="text" class="form-control money-mask" id="initialValue" placeholder="0,00">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Aporte Mensal (R$)</label>
+                                <input type="text" class="form-control money-mask" id="monthlyValue" placeholder="0,00">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Taxa de Juros (%)</label>
+                                <div class="input-group">
+                                    <input type="number" step="0.01" class="form-control" id="interestRate"
+                                        placeholder="0.00">
+                                    <select class="form-select" id="interestType" style="max-width: 100px;">
+                                        <option value="anual">Anual</option>
+                                        <option value="mensal">Mensal</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Note: No Period Input, because Time is the Result! -->
+
+                            <div class="d-grid gap-2">
+                                <div class="btn-group">
+                                    <button type="submit" class="btn btn-primary text-white">Calcular
+                                        Tempo</button>
+                                    <button type="button" class="btn btn-outline-danger" id="resetBtn"
+                                        title="Limpar campos">
+                                        <i class="fas fa-trash-alt"></i> Limpar
+                                    </button>
+                                </div>
+                                <button type="button" class="btn btn-outline-secondary" id="shareBtn">
+                                    <i class="fas fa-share-alt"></i> Compartilhar Link
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Summary Results -->
+                    <div class="col-md-7 mt-4 mt-md-0">
+                        <div class="card text-white bg-success mb-3">
+                            <div class="card-body text-center">
+                                <div class="fs-5 fw-normal">Você atingirá 1 Milhão em:</div>
+                                <div class="fs-2 fw-bold" id="resTime">0 Anos e 0 Meses</div>
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="callout callout-info m-0">
+                                    <small class="text-body-secondary">Total Investido</small>
+                                    <div class="fw-bold fs-5" id="resTotalInvested">R$ 0,00</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="callout callout-success m-0">
+                                    <small class="text-body-secondary">Total em Juros</small>
+                                    <div class="fw-bold fs-5" id="resTotalInterest">R$ 0,00</div>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center mt-3">
+                                <div class="small text-body-secondary">Valor Total Final</div>
+                                <div class="fw-bold fs-4" id="resTotalFinal">R$ 0,00</div>
+                            </div>
+                        </div>
+
+                        <!-- Chart -->
+                        <div class="c-chart-wrapper mt-4 d-flex justify-content-center" id="chartContainer"
+                            style="height: 250px;">
+                            <canvas id="mainChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Table -->
+                <div id="evolutionTable" class="mt-4">
+                    <hr class="my-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h3 class="h5 m-0">Evolução até o Milhão</h3>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-sm border" id="resultTable">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Ano</th>
+                                    <th>Investido Acumulado</th>
+                                    <th>Juros Acumulado</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- JS populated -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="text-center">
+                        <button class="btn btn-outline-primary d-none" id="btnToggleTable">
+                            Carregar mais <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <div class="btn-group" role="group" id="exportButtons">
+                            <button type="button" class="btn btn-sm btn-danger text-white js-export-pdf"
+                                id="btnExportPDF">
+                                <i class="fas fa-file-pdf"></i> PDF
+                            </button>
+                            <button type="button" class="btn btn-sm btn-success text-white js-export-excel"
+                                id="btnExportExcel">
+                                <i class="fas fa-file-excel"></i> Excel
+                            </button>
+                            <button type="button" class="btn btn-sm btn-secondary js-export-csv" id="btnExportCSV">
+                                <i class="fas fa-file-csv"></i> CSV
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Content Section (SEO) -->
+        <div class="card mb-4 seo-content">
+            <div class="card-body">
+                <h2>Como alcançar o Primeiro Milhão?</h2>
+                <p>Atingir a marca de <strong>R$ 1.000.000,00</strong> é um sonho para muitos
+                    brasileiros e um grande marco na jornada da independência financeira. Embora pareça
+                    um valor distante, com disciplina, planejamento e o poder dos <strong>juros
+                        compostos</strong>, é uma meta totalmente alcançável.</p>
+
+                <h3>O Tríplice Caminho da Riqueza</h3>
+                <p>Para acelerar sua jornada rumo ao milhão, você precisa focar em três pilares
+                    principais:</p>
+                <ul>
+                    <li><strong>Aporte Mensal:</strong> É o "combustível" do seu investimento. Quanto
+                        mais você conseguir poupar e investir todos os meses, mais rápido chegará lá.
+                        Tente aumentar seus aportes sempre que sua renda aumentar.</li>
+                    <li><strong>Tempo:</strong> O tempo é o melhor amigo do investidor. Graças aos juros
+                        compostos, o dinheiro se multiplica exponencialmente no longo prazo. Começar
+                        cedo faz toda a diferença.</li>
+                    <li><strong>Taxa de Juros (Rentabilidade):</strong> Buscar investimentos com boas
+                        taxas de retorno (acima da inflação) ajuda seu patrimônio a crescer mais rápido.
+                        No entanto, lembre-se que maior retorno geralmente envolve maior risco.</li>
+                </ul>
+
+                <h3>Dicas Práticas para Chegar Lá</h3>
+                <p>Não existe fórmula mágica, mas algumas estratégias podem ajudar:</p>
+                <ol>
+                    <li><strong>Pague-se primeiro:</strong> Separe o valor do investimento assim que
+                        receber seu salário, antes de gastar com outras coisas.</li>
+                    <li><strong>Reinvista os dividendos:</strong> Se você investe em ações ou fundos
+                        imobiliários, use os proventos para comprar mais cotas, gerando um efeito "bola
+                        de neve".</li>
+                    <li><strong>Diversifique:</strong> Não coloque todos os ovos na mesma cesta. Uma
+                        carteira diversificada protege seu patrimônio de oscilações bruscas do mercado.
+                    </li>
+                </ol>
+
+                <h3>Entenda os Resultados da Calculadora</h3>
+                <p>Nossa ferramenta faz uma simulação matemática precisa considerando seus dados:</p>
+                <ul>
+                    <li><strong>Tempo Estimado:</strong> Mostra em quantos anos e meses você atingirá o
+                        objetivo, mantendo as condições atuais.</li>
+                    <li><strong>Total Investido:</strong> É o montante que saiu efetivamente do seu
+                        bolso ao longo dos anos.</li>
+                    <li><strong>Total em Juros:</strong> É o lucro gerado pelos seus investimentos.
+                        Frequentemente, no final da jornada, os juros representam a maior parte do
+                        milhão!</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <!-- Right Sidebar / Ads -->
+    <div class="col-lg-4">
+        <div class="card mb-4">
+            <div class="card-header">Veja Também</div>
+            <div class="list-group list-group-flush">
+                <a href="../juros-compostos/" class="list-group-item list-group-item-action">Calculadora
+                    de Juros Compostos</a>
+                <a href="../juros-simples/" class="list-group-item list-group-item-action">Calculadora
+                    de Juros Simples</a>
+                <a href="../../saude/curvas-crescimento/" class="list-group-item list-group-item-action">Curvas de
+                    Crescimento (OMS)</a>
+            </div>
+        </div>
+        <div class="ad-slot ad-top">
+    <!-- Lateral_esquerda_vertical -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3058170678556434" data-ad-slot="5635211225"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+    </div>
+</div>
+            </div>
+        </div>
+
+        <!-- Footer Template -->
+<footer class="footer">
+    <div>CalculaHub © 2025.</div>
+</footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.2.0/dist/js/coreui.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
+    
+    <!-- SheetJS for Excel formatting -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
+    <!-- PDF Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <script src="../../assets/js/core.js"></script>
+    <script src="../../assets/js/share.js"></script>
+    
+    <script src="../../assets/js/charts.js"></script>
+    <script src="../../assets/js/calculators/primeiro-milhao.js"></script>
+    
+</body>
+
+</html>

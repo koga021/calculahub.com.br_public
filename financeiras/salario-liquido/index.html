@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Calculadora de Salário Líquido CLT - Calcule INSS e IR | CalculaHub | CalculaHub</title>
+    <meta name="description" content="Calcule seu salário líquido CLT com precisão. INSS progressivo, IRRF mensal, dependentes e detalhamento completo. Grátis e atualizado 2024/2025.">
+
+    <!-- CoreUI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.2.0/dist/css/coreui.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3058170678556434"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Sidebar Template -->
+<div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+    <div class="sidebar-brand d-none d-md-flex">
+        <svg class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
+            <rect width="100%" height="100%" fill="#321fdb" />
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white"
+                font-size="20">CalculaHub</text>
+        </svg>
+        <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
+            <rect width="100%" height="100%" fill="#321fdb" />
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="20">CH</text>
+        </svg>
+    </div>
+    <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+        <li class="nav-item">
+            <a class="nav-link " href="../../index.html">
+                <i class="nav-icon fas fa-tachometer-alt"></i> Dashboard
+            </a>
+        </li>
+        <li class="nav-title">Calculadoras</li>
+        <li class="nav-group show">
+            <a class="nav-link nav-group-toggle" href="#">
+                <i class="nav-icon fas fa-money-bill-wave"></i> Financeiras
+            </a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/juros-compostos/"><span class="nav-icon"></span> Juros
+                        Compostos</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/simulador-financiamento-price-sac/"><span
+                            class="nav-icon"></span> Financiamento (SAC/PRICE)</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/simulador-consorcio/"><span class="nav-icon"></span>
+                        Consórcio</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/juros-simples/"><span class="nav-icon"></span> Juros Simples</a>
+                </li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/primeiro-milhao/"><span class="nav-icon"></span> Primeiro
+                        Milhão</a></li>
+                <li class="nav-item"><a class="nav-link active"
+                        href="../../financeiras/salario-liquido/"><span class="nav-icon"></span> Salário Líquido
+                        CLT</a></li>
+            </ul>
+        </li>
+        <li class="nav-group ">
+            <a class="nav-link nav-group-toggle" href="#">
+                <i class="nav-icon fas fa-heartbeat"></i> Saúde
+            </a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link " href="../../saude/imc/"><span
+                            class="nav-icon"></span> IMC</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../saude/curvas-crescimento/"><span class="nav-icon"></span> Curvas de
+                        Crescimento</a></li>
+            </ul>
+        </li>
+    </ul>
+    <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+</div>
+
+    <div class="wrapper d-flex flex-column min-vh-100 bg-light">
+        <!-- Header Template -->
+<header class="header header-sticky mb-4 d-md-none">
+    <div class="container-fluid">
+        <button class="header-toggler px-md-0 me-md-3 d-md-none" type="button" data-coreui-toggle="sidebar"
+            data-coreui-target="#sidebar">
+            <i class="fas fa-bars"></i>
+        </button>
+        <a class="header-brand d-md-none" href="#">CalculaHub</a>
+    </div>
+</header>
+
+        <div class="body flex-grow-1 px-3">
+            <div class="container-lg">
+                <!-- AdSense Top -->
+<div class="ad-slot ad-sidebar">
+    <!-- TOPO_anuncio -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3058170678556434" data-ad-slot="5209310594"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h1 class="h3 m-0">Calculadora de Salário Líquido CLT</h1>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info" role="alert">
+                    <i class="fas fa-info-circle"></i> Calcule seu salário líquido com INSS progressivo e IRRF mensal.
+                    Valores aproximados.
+                </div>
+
+                <div class="row">
+                    <!-- Form -->
+                    <div class="col-md-5">
+                        <form id="calcForm">
+                            <div class="mb-3">
+                                <label class="form-label">Salário Bruto (R$)</label>
+                                <input type="text" class="form-control money-mask" id="grossSalary" placeholder="0,00"
+                                    required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Número de Dependentes</label>
+                                <input type="number" class="form-control" id="dependents" min="0" max="10" value="0">
+                                <div class="form-text">R$ 189,59 de dedução por dependente</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Outros Descontos (R$)</label>
+                                <input type="text" class="form-control money-mask" id="otherDiscounts"
+                                    placeholder="0,00">
+                                <div class="form-text">Plano de saúde, pensão, etc.</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="transportVoucher">
+                                    <label class="form-check-label" for="transportVoucher">
+                                        Vale-Transporte
+                                    </label>
+                                </div>
+                                <input type="text" class="form-control money-mask mt-2" id="transportValue"
+                                    placeholder="0,00" disabled>
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <div class="btn-group">
+                                    <button type="submit" class="btn btn-primary text-white">Calcular</button>
+                                    <button type="button" class="btn btn-outline-danger" id="resetBtn"
+                                        title="Limpar campos">
+                                        <i class="fas fa-trash-alt"></i> Limpar
+                                    </button>
+                                </div>
+                                <button type="button" class="btn btn-outline-secondary" id="shareBtn">
+                                    <i class="fas fa-share-alt"></i> Compartilhar Link
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Summary Results -->
+                    <div class="col-md-7 mt-4 mt-md-0">
+                        <!-- Main Result Card -->
+                        <div class="card bg-primary text-white mb-3">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span>Salário Bruto</span>
+                                    <span class="fs-5" id="resGrossSalary">R$ 0,00</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span>(-) INSS</span>
+                                    <span class="fs-5 text-danger" id="resINSS">R$ 0,00</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span>(-) IRRF</span>
+                                    <span class="fs-5 text-danger" id="resIRRF">R$ 0,00</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span>(-) Outros</span>
+                                    <span class="fs-5 text-danger" id="resOthers">R$ 0,00</span>
+                                </div>
+                                <hr class="border-white opacity-25">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="fs-4 fw-bold">Salário Líquido</span>
+                                    <span class="display-6 fw-bold" id="resNetSalary">R$ 0,00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- INSS Details -->
+                        <div class="card mb-3">
+                            <div class="card-body" id="inssDetails">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+
+                        <!-- IR Details -->
+                        <div class="card">
+                            <div class="card-body" id="irDetails">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Annual Table -->
+                <div id="evolutionTable" style="display: none;">
+                    <hr class="my-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h3 class="h5 m-0">Projeção Anual</h3>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-sm btn-outline-danger js-export-pdf"
+                                title="Exportar PDF">
+                                <i class="fas fa-file-pdf"></i> Exportar PDF
+                            </button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-sm border" id="resultTable">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Mês</th>
+                                    <th>Bruto</th>
+                                    <th>INSS</th>
+                                    <th>IRRF</th>
+                                    <th>Outros</th>
+                                    <th>Líquido</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- JS populated -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Content Section (SEO) -->
+        <div class="card mb-4 seo-content">
+            <div class="card-body">
+                <h2>Como funciona o cálculo do Salário Líquido CLT?</h2>
+                <p>O salário líquido é o valor que você efetivamente recebe após todos os descontos obrigatórios e
+                    opcionais. Os principais descontos são:</p>
+
+                <h3>1. INSS (Progressivo)</h3>
+                <p>O INSS é calculado de forma <strong>progressiva</strong>, ou seja, cada faixa do seu salário é
+                    tributada com uma alíquota diferente:</p>
+                <ul>
+                    <li>Até R$ 1.412,00: <strong>7,5%</strong></li>
+                    <li>De R$ 1.412,01 até R$ 2.666,68: <strong>9%</strong></li>
+                    <li>De R$ 2.666,69 até R$ 4.000,03: <strong>12%</strong></li>
+                    <li>De R$ 4.000,04 até R$ 7.786,02: <strong>14%</strong></li>
+                </ul>
+                <p class="alert alert-warning">⚠️ <strong>Importante:</strong> O teto do INSS é R$ 7.786,02. Valores
+                    acima disso não pagam INSS adicional.</p>
+
+                <h3>2. IRRF (Imposto de Renda Retido na Fonte)</h3>
+                <p>O IR também é progressivo e calculado sobre a base: <code>Salário Bruto - INSS - Dependentes</code>
+                </p>
+                <ul>
+                    <li>Até R$ 2.259,20: <strong>Isento</strong></li>
+                    <li>De R$ 2.259,21 até R$ 2.826,65: <strong>7,5%</strong> (dedução: R$ 169,44)</li>
+                    <li>De R$ 2.826,66 até R$ 3.751,05: <strong>15%</strong> (dedução: R$ 381,44)</li>
+                    <li>De R$ 3.751,06 até R$ 4.664,68: <strong>22,5%</strong> (dedução: R$ 662,77)</li>
+                    <li>Acima de R$ 4.664,68: <strong>27,5%</strong> (dedução: R$ 896,00)</li>
+                </ul>
+
+                <h3>3. Dependentes</h3>
+                <p>Cada dependente deduz <strong>R$ 189,59</strong> da base de cálculo do IR, reduzindo o imposto a
+                    pagar.</p>
+
+                <h3>4. Desconto Simplificado</h3>
+                <p>A calculadora aplica automaticamente o <strong>desconto simplificado de R$ 528,00</strong> quando for
+                    mais vantajoso que o cálculo normal.</p>
+
+                <h3>Exemplo Prático</h3>
+                <p>Salário bruto: <strong>R$ 5.000,00</strong> | Dependentes: <strong>1</strong></p>
+                <ol>
+                    <li>INSS: R$ 1.412,00 × 7,5% + R$ 1.254,68 × 9% + R$ 1.333,35 × 12% + R$ 999,97 × 14% = <strong>R$
+                            413,42</strong></li>
+                    <li>Base IR: R$ 5.000,00 - R$ 413,42 - R$ 189,59 = <strong>R$ 4.396,99</strong></li>
+                    <li>IRRF: R$ 4.396,99 × 22,5% - R$ 662,77 = <strong>R$ 326,55</strong></li>
+                    <li>Salário Líquido: R$ 5.000,00 - R$ 413,42 - R$ 326,55 = <strong>R$ 4.260,03</strong></li>
+                </ol>
+
+                <div class="alert alert-info mt-4">
+                    <strong>📌 Aviso Legal:</strong> Esta calculadora fornece valores aproximados para fins de
+                    planejamento. O valor exato pode variar conforme benefícios, adicionais e regras específicas da
+                    empresa. Sempre consulte seu holerite oficial.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Right Sidebar / Ads -->
+    <div class="col-lg-4">
+        <div class="card mb-4">
+            <div class="card-header">Veja Também</div>
+            <div class="list-group list-group-flush">
+                <a href="../juros-compostos/" class="list-group-item list-group-item-action">Calculadora de Juros
+                    Compostos</a>
+                <a href="../simulador-financiamento-price-sac/" class="list-group-item list-group-item-action">Simulador
+                    de Financiamento</a>
+                <a href="../primeiro-milhao/" class="list-group-item list-group-item-action">Calculadora do Primeiro
+                    Milhão</a>
+            </div>
+        </div>
+        <div class="ad-slot ad-top">
+    <!-- Lateral_esquerda_vertical -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3058170678556434" data-ad-slot="5635211225"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+    </div>
+</div>
+            </div>
+        </div>
+
+        <!-- Footer Template -->
+<footer class="footer">
+    <div>CalculaHub © 2025.</div>
+</footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.2.0/dist/js/coreui.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
+    
+    <!-- SheetJS for Excel formatting -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
+    <!-- PDF Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <script src="../../assets/js/core.js"></script>
+    <script src="../../assets/js/share.js"></script>
+    
+    <script src="../../assets/js/calculators/salario-liquido.js"></script>
+    
+</body>
+
+</html>

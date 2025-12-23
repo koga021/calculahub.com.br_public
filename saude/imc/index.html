@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Calculadora de IMC - Índice de Massa Corporal | CalculaHub</title>
+    <meta name="description" content="Calcule seu IMC (Índice de Massa Corporal) e descubra se está no peso ideal. Inclui tabela de classificação da OMS.">
+
+    <!-- CoreUI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.2.0/dist/css/coreui.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3058170678556434"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Sidebar Template -->
+<div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+    <div class="sidebar-brand d-none d-md-flex">
+        <svg class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
+            <rect width="100%" height="100%" fill="#321fdb" />
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white"
+                font-size="20">CalculaHub</text>
+        </svg>
+        <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
+            <rect width="100%" height="100%" fill="#321fdb" />
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="20">CH</text>
+        </svg>
+    </div>
+    <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+        <li class="nav-item">
+            <a class="nav-link " href="../../index.html">
+                <i class="nav-icon fas fa-tachometer-alt"></i> Dashboard
+            </a>
+        </li>
+        <li class="nav-title">Calculadoras</li>
+        <li class="nav-group ">
+            <a class="nav-link nav-group-toggle" href="#">
+                <i class="nav-icon fas fa-money-bill-wave"></i> Financeiras
+            </a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/juros-compostos/"><span class="nav-icon"></span> Juros
+                        Compostos</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/simulador-financiamento-price-sac/"><span
+                            class="nav-icon"></span> Financiamento (SAC/PRICE)</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/simulador-consorcio/"><span class="nav-icon"></span>
+                        Consórcio</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/juros-simples/"><span class="nav-icon"></span> Juros Simples</a>
+                </li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/primeiro-milhao/"><span class="nav-icon"></span> Primeiro
+                        Milhão</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/salario-liquido/"><span class="nav-icon"></span> Salário Líquido
+                        CLT</a></li>
+            </ul>
+        </li>
+        <li class="nav-group show">
+            <a class="nav-link nav-group-toggle" href="#">
+                <i class="nav-icon fas fa-heartbeat"></i> Saúde
+            </a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link active" href="../../saude/imc/"><span
+                            class="nav-icon"></span> IMC</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../saude/curvas-crescimento/"><span class="nav-icon"></span> Curvas de
+                        Crescimento</a></li>
+            </ul>
+        </li>
+    </ul>
+    <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+</div>
+
+    <div class="wrapper d-flex flex-column min-vh-100 bg-light">
+        <!-- Header Template -->
+<header class="header header-sticky mb-4 d-md-none">
+    <div class="container-fluid">
+        <button class="header-toggler px-md-0 me-md-3 d-md-none" type="button" data-coreui-toggle="sidebar"
+            data-coreui-target="#sidebar">
+            <i class="fas fa-bars"></i>
+        </button>
+        <a class="header-brand d-md-none" href="#">CalculaHub</a>
+    </div>
+</header>
+
+        <div class="body flex-grow-1 px-3">
+            <div class="container-lg">
+                <!-- AdSense Top -->
+<div class="ad-slot ad-sidebar">
+    <!-- TOPO_anuncio -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3058170678556434" data-ad-slot="5209310594"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h1 class="h3 m-0">Calculadora de IMC (Índice de Massa Corporal)</h1>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-success" role="alert">
+                    <i class="fas fa-check-circle"></i> Monitore sua saúde de forma simples e rápida.
+                </div>
+
+                <div class="row">
+                    <!-- Form -->
+                    <div class="col-md-5">
+                        <form id="calcForm">
+                            <div class="mb-3">
+                                <label class="form-label">Peso (kg)</label>
+                                <input type="number" step="0.1" class="form-control" id="weight" placeholder="0.0">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Altura (cm)</label>
+                                <input type="number" class="form-control" id="height" placeholder="0">
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary text-white">Calcular
+                                    IMC</button>
+                                <div class="d-flex gap-2">
+                                    <button type="button" class="btn btn-outline-secondary w-50" id="shareBtn">
+                                        <i class="fas fa-share-alt"></i> Compartilhar
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger w-50" id="resetBtn">
+                                        <i class="fas fa-trash-alt"></i> Limpar
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Summary Results -->
+                    <div class="col-md-7 mt-4 mt-md-0">
+                        <div class="text-center mb-4">
+                            <h3>Seu IMC é:</h3>
+                            <div class="display-3 fw-bold text-primary" id="resBMI">--</div>
+                            <div class="fs-4 badge bg-secondary" id="resStatus">Aguardando cálculo</div>
+                        </div>
+
+                        <!-- Chart -->
+                        <div class="c-chart-wrapper mt-4">
+                            <canvas id="bmiChart"></canvas>
+                        </div>
+                        <div class="text-center mt-3">
+                            <button type="button" class="btn btn-sm btn-outline-danger js-export-pdf" id="btnExportPDF">
+                                <i class="fas fa-file-pdf"></i> Baixar Relatório (PDF)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <!-- Detailed Table -->
+                <h3 class="h5">Tabela de Classificação (OMS)</h3>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover border">
+                        <thead class="table-light">
+                            <tr>
+                                <th>IMC</th>
+                                <th>Classificação</th>
+                                <th>Grau de Obesidade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="row-magreza-grave">
+                                <td>Menor que 16,0</td>
+                                <td>Magreza grave</td>
+                                <td>0</td>
+                            </tr>
+                            <tr id="row-magreza-moderada">
+                                <td>16,0 a 16,9</td>
+                                <td>Magreza moderada</td>
+                                <td>0</td>
+                            </tr>
+                            <tr id="row-magreza-leve">
+                                <td>17,0 a 18,4</td>
+                                <td>Magreza leve</td>
+                                <td>0</td>
+                            </tr>
+                            <tr id="row-normal">
+                                <td>18,5 a 24,9</td>
+                                <td>Normal</td>
+                                <td>0</td>
+                            </tr>
+                            <tr id="row-over">
+                                <td>25,0 a 29,9</td>
+                                <td>Sobrepeso</td>
+                                <td>I</td>
+                            </tr>
+                            <tr id="row-obesity-1">
+                                <td>30,0 a 34,9</td>
+                                <td>Obesidade</td>
+                                <td>I</td>
+                            </tr>
+                            <tr id="row-obesity-2">
+                                <td>35,0 a 39,9</td>
+                                <td>Obesidade</td>
+                                <td>II</td>
+                            </tr>
+                            <tr id="row-obesity-3">
+                                <td>Maior ou igual a 40,0</td>
+                                <td>Obesidade Grave (Mórbida)</td>
+                                <td>III</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Content Section (SEO) -->
+        <div class="card mb-4 seo-content">
+            <div class="card-body">
+                <h2>O que é o IMC e por que ele é importante?</h2>
+                <p>O <strong>Índice de Massa Corporal (IMC)</strong> é a métrica padrão internacional
+                    adotada pela <strong>Organização Mundial da Saúde (OMS)</strong> para avaliar se uma
+                    pessoa está com peso ideal, sobrepeso ou obesidade. Ele serve como um indicador
+                    geral de gordura corporal para a população adulta.</p>
+
+                <p>Manter o IMC dentro da faixa normal é fundamental para a saúde, pois o excesso de
+                    peso está associado a um risco maior de doenças como:</p>
+                <ul>
+                    <li>Diabetes tipo 2</li>
+                    <li>Doenças cardiovasculares (hipertensão, infarto)</li>
+                    <li>Problemas articulares</li>
+                    <li>Apneia do sono</li>
+                </ul>
+
+                <h3>Como é feito o cálculo?</h3>
+                <p>A fórmula é universal e simples: divide-se o peso (em kg) pela altura ao quadrado (em
+                    metros).</p>
+                <div class="alert alert-light border text-center">
+                    <strong>IMC = Peso ÷ (Altura × Altura)</strong>
+                </div>
+                <p>Por exemplo, se você pesa 70kg e mede 1,75m, o cálculo é: 70 ÷ (1.75 × 1.75) ≈ 22.86
+                    (Peso Normal).</p>
+
+                <h3>Limitações do IMC</h3>
+                <p>Embora seja uma ferramenta útil, o IMC não avalia a composição corporal. Isso
+                    significa que ele não distingue entre <strong>massa muscular, massa óssea e
+                        gordura</strong>.</p>
+                <ul>
+                    <li><strong>Atletas:</strong> Podem ter um IMC alto devido à grande massa muscular,
+                        sem estarem com excesso de gordura.</li>
+                    <li><strong>Idosos:</strong> A perda natural de massa muscular pode mascarar o
+                        excesso de gordura.</li>
+                    <li><strong>Gestantes:</strong> Devem seguir tabelas específicas de ganho de peso.
+                    </li>
+                </ul>
+
+                <p class="text-muted small">Nota: Esta calculadora é destinada a adultos (20 a 65 anos).
+                    Para crianças e adolescentes, utilizam-se as Curvas de Crescimento da OMS.</p>
+            </div>
+        </div>
+
+    </div>
+    <!-- Right Sidebar / Ads -->
+    <div class="col-lg-4">
+        <div class="card mb-4">
+            <div class="card-header">Veja Também</div>
+            <div class="list-group list-group-flush">
+                <a href="../curvas-crescimento/" class="list-group-item list-group-item-action">Curvas
+                    de Crescimento (OMS)</a>
+                <a href="../../financeiras/juros-compostos/" class="list-group-item list-group-item-action">Calculadora
+                    de Juros Compostos</a>
+                <a href="../../financeiras/juros-simples/" class="list-group-item list-group-item-action">Calculadora de
+                    Juros Simples</a>
+            </div>
+        </div>
+        <div class="ad-slot ad-top">
+    <!-- Lateral_esquerda_vertical -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3058170678556434" data-ad-slot="5635211225"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+    </div>
+</div>
+            </div>
+        </div>
+
+        <!-- Footer Template -->
+<footer class="footer">
+    <div>CalculaHub © 2025.</div>
+</footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.2.0/dist/js/coreui.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
+    
+    
+    <script src="../../assets/js/core.js"></script>
+    <script src="../../assets/js/share.js"></script>
+    
+    <script src="../../assets/js/charts.js"></script>
+    <script src="../../assets/js/calculators/imc.js"></script>
+    
+</body>
+
+</html>
