@@ -15,6 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const elIncludeVac = document.getElementById('includeVacProp');
     const elIncludeMulta = document.getElementById('includeFGTSMulta');
 
+    const competenceDate = () => {
+        const dDis = new Date(elDis.value + 'T00:00:00');
+        if (isNaN(dDis.getTime())) return "";
+        return `${String(dDis.getMonth() + 1).padStart(2, '0')}/${dDis.getFullYear()}`;
+    };
+
     const form = document.getElementById('calcForm');
     const resetBtn = document.getElementById('resetBtn');
     const resultsArea = document.getElementById('resultsArea');
@@ -64,12 +70,20 @@ document.addEventListener('DOMContentLoaded', () => {
         return inss;
     };
 
-    const calculateIRRF = (base) => {
+    const applyIRRFTable = (base) => {
         if (base <= 0) return 0;
         let b = IRRF_TABLE.find(x => base <= x.limit) || IRRF_TABLE[IRRF_TABLE.length - 1];
-        const normal = Math.max(0, (base * b.rate) - b.deduction);
-        const simplified = Math.max(0, base - SIMPLIFIED_DEDUCTION) * b.rate;
-        return Math.min(normal, simplified);
+        return Math.max(0, (base * b.rate) - b.deduction);
+    };
+
+    const calculateIRRF = (taxableIncome, inss, deps) => {
+        const standardBase = taxableIncome - inss - (deps * DEPENDENT_DEDUCTION);
+        const simplifiedBase = taxableIncome - SIMPLIFIED_DEDUCTION;
+
+        const standardValue = applyIRRFTable(standardBase);
+        const simplifiedValue = applyIRRFTable(simplifiedBase);
+
+        return Math.min(standardValue, simplifiedValue);
     };
 
     // Main Calc
@@ -90,17 +104,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const proventos = [];
         const descontos = [];
 
+
         // 1. Saldo de Salário
         const daysInMonth = new Date(dDis.getFullYear(), dDis.getMonth() + 1, 0).getDate();
         const daysWorked = dDis.getDate();
         const saldoSalario = (salary / 30) * daysWorked;
         proventos.push({ label: `Saldo de Salário (${daysWorked} dias)`, value: saldoSalario });
 
-        // INSS/IRRF over salary balance
-        const inssSaldo = calculateINSS(saldoSalario);
-        descontos.push({ label: 'INSS s/ Saldo Salário', value: inssSaldo });
 
         // 2. 13º Proporcional
+        let treceiro = 0;
         if (elInclude13.checked && rType !== 'com_justa') {
             // Rule: 15 days or more in a month counts as 1/12
             let months13 = dDis.getMonth() + (dDis.getDate() >= 15 ? 1 : 0);
@@ -110,15 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 months13 = Math.max(0, months13 - startMonth);
             }
 
-            const treceiro = (salary / 12) * months13;
+            treceiro = (salary / 12) * months13;
             if (treceiro > 0) {
                 proventos.push({ label: `13º Proporcional (${months13}/12)`, value: treceiro });
-                const inss13 = calculateINSS(treceiro);
-                descontos.push({ label: 'INSS s/ 13º', value: inss13 });
             }
         }
 
-        // 3. Férias
+        // 3. Férias (NÃO TRIBUTÁVEIS em rescisão para INSS/IRRF)
         if (rType !== 'com_justa') {
             // Férias Vencidas
             if (elPendingVacationStatus.checked) {
@@ -162,15 +173,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 const factor = rType === 'acordo' ? 0.5 : 1.0;
                 avisoValue = (salary / 30) * daysAviso * factor;
                 proventos.push({ label: `Aviso Prévio Indenizado (${daysAviso} dias${rType === 'acordo' ? ' x 50%' : ''})`, value: avisoValue });
+                // Aviso Indenizado NÃO tributa INSS/IRRF na maioria das interpretações esocial (rescisão)
             }
+        } else if (nType === 'trabalhado') {
+            // Se foi trabalhado, geralmente o aviso termina na data de desligamento.
+            // O saldo de salário já cobre os dias do mês. 
+            // Se o aviso engloba dias de meses anteriores, supõe-se que já foram pagos.
+            // Aqui garantimos que o saldo de salário seja considerado tributável.
+            // (Já foi adicionado acima)
         } else if (nType === 'nao_cumprido') {
             if (rType === 'pedido' || rType === 'acordo') {
-                const descAviso = salary; // Basic 30 days
-                descontos.push({ label: 'Desconto Aviso Prévio (30 dias)', value: descAviso });
+                const factor = rType === 'acordo' ? 0.5 : 1.0;
+                const descAviso = salary * factor;
+                descontos.push({ label: `Desconto Aviso Prévio${rType === 'acordo' ? ' (50%)' : ''}`, value: descAviso });
             }
         }
 
-        // 5. FGTS / Multa
+        // 5. Consolidated Taxes (INSS and IRRF)
+        // Group taxable bases: Saldo Salário + 13º + Aviso (Worked or Indentified)
+        const totalTributavel = saldoSalario + treceiro + avisoValue;
+        const compStr = competenceDate();
+
+        if (totalTributavel > 0) {
+            const totalINSS = calculateINSS(totalTributavel);
+            if (totalINSS > 0) {
+                descontos.push({ label: `INSS (Competência ${compStr})`, value: totalINSS });
+            }
+
+            const totalIRRF = calculateIRRF(totalTributavel, totalINSS, depCount);
+            if (totalIRRF > 0) {
+                descontos.push({ label: `IRRF (Competência ${compStr})`, value: totalIRRF });
+            }
+        }
+
+        // 7. FGTS / Multa (Informativo)
         const totalMonthsWorked = Math.floor((dDis - dAdm) / (1000 * 60 * 60 * 24 * 30));
         const estimatedFGTSBalance = salary * 0.08 * Math.max(1, totalMonthsWorked);
         let multa = 0;
@@ -183,11 +219,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         resFgtsMulta.textContent = App.formatCurrency(multa);
-
-        // 6. IRRF
-        const totalBase = saldoSalario;
-        const irrfValue = calculateIRRF(totalBase - inssSaldo - (depCount * DEPENDENT_DEDUCTION));
-        if (irrfValue > 0) descontos.push({ label: 'IRRF s/ Saldo Salário', value: irrfValue });
 
         // Render Table
         tableBody.innerHTML = '';
