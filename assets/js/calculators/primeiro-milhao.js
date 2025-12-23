@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Get values
         let initial = App.parseCurrency(elInitial.value);
         let monthly = App.parseCurrency(elMonthly.value);
-        let rate = parseFloat(elRate.value) || 0;
+        let rate = App.parseFloat(elRate.value) || 0;
         let isAnnual = elType.value === 'anual';
         let target = 1000000;
 
@@ -120,13 +120,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         // Render Annual Table
-        elTableBody.innerHTML = '';
+        let tableHtml = '';
         annualSnapshot.forEach((row, index) => {
             // Logic: Show first 20 years, hide the rest by default
             let shouldHide = index >= 20;
             let rowClass = shouldHide ? 'collapse-row d-none' : '';
 
-            let tr = `
+            tableHtml += `
                 <tr class="${rowClass}">
                     <td>${row.year}º Ano</td>
                     <td>${App.formatCurrency(row.invested)}</td>
@@ -134,7 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <td><strong>${App.formatCurrency(row.total)}</strong></td>
                 </tr>
             `;
-            elTableBody.innerHTML += tr;
 
             // Store for export
             window.simulationData.push([
@@ -144,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 App.formatCurrency(row.total)
             ]);
         });
+        elTableBody.innerHTML = tableHtml;
 
         // Reset visibility (Show Load More if needed)
         const btnToggle = document.getElementById('btnToggleTable');
@@ -215,7 +215,9 @@ document.addEventListener('DOMContentLoaded', () => {
             elTableBody.innerHTML = '';
             window.simulationData = [];
 
-            if (btnToggle) btnToggle.classList.add('d-none');
+            if (btnToggle) {
+                btnToggle.classList.add('d-none');
+            }
 
             const chartCanvas = document.getElementById('mainChart');
             // Chart destroy helper logic usually needed, but ChartHelper.init handles re-creation
