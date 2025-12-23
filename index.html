@@ -6,7 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>CalculaHub - Calculadoras Online Grátis (Financeira, Trabalhista, Saúde) | CalculaHub</title>
     <meta name="description" content="CalculaHub - Sua central de calculadoras online gratuitas. Financeiras, trabalhistas, saúde, matemática e muito mais.">
+    <link rel="canonical" href="https://calculahub.com.br/">
 
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calculahub.com.br/">
+    <meta property="og:title" content="CalculaHub - Calculadoras Online Grátis (Financeira, Trabalhista, Saúde)">
+    <meta property="og:description" content="CalculaHub - Sua central de calculadoras online gratuitas. Financeiras, trabalhistas, saúde, matemática e muito mais.">
+    <meta property="og:image" content="./assets/images/og-default.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://calculahub.com.br/">
+    <meta property="twitter:title" content="CalculaHub - Calculadoras Online Grátis (Financeira, Trabalhista, Saúde)">
+    <meta property="twitter:description" content="CalculaHub - Sua central de calculadoras online gratuitas. Financeiras, trabalhistas, saúde, matemática e muito mais.">
+    <meta property="twitter:image" content="./assets/images/og-default.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "CalculaHub",
+      "url": "https://calculahub.com.br",
+      "description": "CalculaHub - Sua central de calculadoras online gratuitas. Financeiras, trabalhistas, saúde, matemática e muito mais."
+    }
+    </script>
     <!-- CoreUI CSS -->
     <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.2.0/dist/css/coreui.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -97,43 +124,166 @@
         data-ad-format="auto" data-full-width-responsive="true"></ins>
 </div>
 
-<div class="row g-4">
-    <div class="col-sm-6 col-xl-3">
-        <div class="card text-white bg-primary">
-            <div class="card-body pb-0 d-flex justify-content-between align-items-start">
-                <div>
-                    <div class="fs-4 fw-semibold">Juros <span class="fs-6 fw-normal">Compostos</span></div>
-                    <div>Financeiro</div>
-                </div>
+<!-- Hero Section -->
+<div class="py-5 text-center bg-white rounded shadow-sm mb-4">
+    <div class="px-4">
+        <h1 class="display-5 fw-bold text-primary">Bem-vindo ao CalculaHub</h1>
+        <div class="col-lg-8 mx-auto">
+            <p class="lead mb-4 text-muted">Sua central definitiva de calculadoras online gratuitas.
+                Ferramentas precisas, rápidas e fáceis de usar para finanças, saúde e muito mais.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a href="#financeiras" class="btn btn-primary btn-lg px-4 gap-3 text-white">Calculadoras Financeiras</a>
+                <a href="#saude" class="btn btn-outline-secondary btn-lg px-4">Calculadoras de Saúde</a>
             </div>
-            <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;">
-                <!-- Icon or mini chart -->
-                <i class="fas fa-chart-line fa-3x" style="opacity: 0.5"></i>
-            </div>
-            <a href="financeiras/juros-compostos/" class="stretched-link"></a>
-        </div>
-    </div>
-    <!-- Add more summary cards here -->
-    <div class="col-sm-6 col-xl-3">
-        <div class="card text-white bg-success">
-            <div class="card-body pb-0 d-flex justify-content-between align-items-start">
-                <div>
-                    <div class="fs-4 fw-semibold">IMC <span class="fs-6 fw-normal">Corporal</span></div>
-                    <div>Saúde</div>
-                </div>
-            </div>
-            <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;">
-                <i class="fas fa-weight fa-3x" style="opacity: 0.5"></i>
-            </div>
-            <a href="saude/imc/" class="stretched-link"></a>
         </div>
     </div>
 </div>
 
+<!-- Financial Section -->
+<h2 class="h4 mb-4 border-bottom pb-2" id="financeiras">
+    <i class="fas fa-hand-holding-usd text-primary"></i> Calculadoras Financeiras
+</h2>
+<div class="row g-4 mb-5">
+    <!-- Juros Compostos -->
+    <div class="col-sm-6 col-xl-3">
+        <div class="card h-100 border-0 shadow-sm result-card">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="bg-primary bg-opacity-10 p-2 rounded me-3 text-primary">
+                        <i class="fas fa-chart-line fa-2x"></i>
+                    </div>
+                    <h3 class="h5 mb-0">Juros Compostos</h3>
+                </div>
+                <p class="card-text text-muted small">Simule o crescimento do seu patrimônio com aportes mensais e juros
+                    sobre juros.</p>
+                <a href="financeiras/juros-compostos/" class="stretched-link"></a>
+            </div>
+        </div>
+    </div>
 
+    <!-- Salário Líquido -->
+    <div class="col-sm-6 col-xl-3">
+        <div class="card h-100 border-0 shadow-sm result-card">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="bg-success bg-opacity-10 p-2 rounded me-3 text-success">
+                        <i class="fas fa-wallet fa-2x"></i>
+                    </div>
+                    <h3 class="h5 mb-0">Salário Líquido</h3>
+                </div>
+                <p class="card-text text-muted small">Calcule descontos de INSS e IRRF e saiba quanto cairá na sua conta
+                    no final do mês.</p>
+                <a href="financeiras/salario-liquido/" class="stretched-link"></a>
+            </div>
+        </div>
+    </div>
 
+    <!-- Primeiro Milhão -->
+    <div class="col-sm-6 col-xl-3">
+        <div class="card h-100 border-0 shadow-sm result-card">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="bg-warning bg-opacity-10 p-2 rounded me-3 text-warning">
+                        <i class="fas fa-bullseye fa-2x"></i>
+                    </div>
+                    <h3 class="h5 mb-0">Primeiro Milhão</h3>
+                </div>
+                <p class="card-text text-muted small">Descubra em quanto tempo você atingirá sua liberdade financeira de
+                    R$ 1 milhão.</p>
+                <a href="financeiras/primeiro-milhao/" class="stretched-link"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Financiamento -->
+    <div class="col-sm-6 col-xl-3">
+        <div class="card h-100 border-0 shadow-sm result-card">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="bg-info bg-opacity-10 p-2 rounded me-3 text-info">
+                        <i class="fas fa-home fa-2x"></i>
+                    </div>
+                    <h3 class="h5 mb-0">PRICE vs SAC</h3>
+                </div>
+                <p class="card-text text-muted small">Compare as tabelas de amortização e escolha o melhor sistema para
+                    o seu financiamento.</p>
+                <a href="financeiras/simulador-financiamento-price-sac/" class="stretched-link"></a>
+            </div>
+        </div>
+    </div>
 </div>
+
+<!-- Health Section -->
+<h2 class="h4 mb-4 border-bottom pb-2" id="saude">
+    <i class="fas fa-heartbeat text-danger"></i> Saúde e Bem-estar
+</h2>
+<div class="row g-4 mb-5">
+    <!-- IMC -->
+    <div class="col-sm-6 col-xl-3">
+        <div class="card h-100 border-0 shadow-sm result-card">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="bg-success bg-opacity-10 p-2 rounded me-3 text-success">
+                        <i class="fas fa-weight fa-2x"></i>
+                    </div>
+                    <h3 class="h5 mb-0">Calculadora de IMC</h3>
+                </div>
+                <p class="card-text text-muted small">Descubra se seu peso está adequado à sua altura segundo os padrões
+                    da OMS.</p>
+                <a href="saude/imc/" class="stretched-link"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Curvas OMS -->
+    <div class="col-sm-6 col-xl-3">
+        <div class="card h-100 border-0 shadow-sm result-card">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="bg-primary bg-opacity-10 p-2 rounded me-3 text-primary">
+                        <i class="fas fa-baby fa-2x"></i>
+                    </div>
+                    <h3 class="h5 mb-0">Crescimento Infantil</h3>
+                </div>
+                <p class="card-text text-muted small">Acompanhe o desenvolvimento do seu bebê com curvas de peso e
+                    altura oficiais da OMS.</p>
+                <a href="saude/curvas-crescimento/" class="stretched-link"></a>
+            </div>
+        </div>
+    </div>
 </div>
+
+<!-- SEO / About Section -->
+<div class="card mb-5 border-0 shadow-sm bg-light">
+    <div class="card-body p-5">
+        <div class="seo-content">
+            <h2 class="mt-0">Por que usar o CalculaHub?</h2>
+            <p>O <strong>CalculaHub</strong> foi criado com a missão de tornar cálculos complexos acessíveis a todos.
+                Seja você um investidor planejando o futuro, um trabalhador conferindo seu salário, ou um pai
+                acompanhando o crescimento do filho,
+                nossas ferramentas oferecem a precisão que você precisa em segundos.</p>
+
+            <h3>Nossas Ferramentas Gratuitas</h3>
+            <p>Diferente de outros sites, o CalculaHub foca na <strong>experiência do usuário</strong> e na
+                <strong>exatidão matemática</strong>.
+                Nossas calculadoras financeiras utilizam as fórmulas mais atuais do mercado, enquanto nossas ferramentas
+                de saúde baseiam-se em padrões internacionais como os da OMS (Organização Mundial da Saúde).
+            </p>
+
+            <ul>
+                <li><strong>Privacidade:</strong> Seus dados não são armazenados em nossos servidores.</li>
+                <li><strong>Gratuidade:</strong> Acesso ilimitado a todas as ferramentas sem necessidade de cadastro.
+                </li>
+                <li><strong>Precisão:</strong> Fórmulas atualizadas conforme a legislação e padrões vigentes
+                    (2024/2025).</li>
+                <li><strong>Mobilidade:</strong> Design responsivo que funciona perfeitamente em celulares, tablets e
+                    desktops.</li>
+                <li><strong>Download:</strong> Baixe o resultado da calculadora para seu celular ou computador.</li>
+            </ul>
+
+            <p>Comece a simular agora mesmo e tome decisões mais inteligentes para sua vida pessoal e financeira!</p>
+        </div>
+    </div>
 </div>
             </div>
         </div>
