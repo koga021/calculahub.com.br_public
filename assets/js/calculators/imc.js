@@ -178,6 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
             headStyles: { fillColor: [50, 31, 219] }
         });
 
+        App.addPdfDisclaimer(doc);
         doc.save(getFileName('pdf'));
     };
 

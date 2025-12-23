@@ -275,7 +275,10 @@ document.addEventListener('DOMContentLoaded', () => {
             body: window.simulationData || [],
             startY: 75,
             theme: 'striped',
-            headStyles: { fillColor: [46, 184, 92] }
+            headStyles: { fillColor: [46, 184, 92] },
+            didDrawPage: (data) => {
+                App.addPdfDisclaimer(doc);
+            }
         });
 
         doc.save(getFileName('pdf'));

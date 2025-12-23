@@ -294,12 +294,17 @@ document.addEventListener('DOMContentLoaded', () => {
             body: rows,
             startY: 75,
             theme: 'striped',
-            headStyles: { fillColor: [46, 184, 92] }
+            headStyles: { fillColor: [46, 184, 92] },
+            didDrawPage: (data) => {
+                App.addPdfDisclaimer(doc);
+            }
         });
 
         // Footer
-        doc.setFontSize(10);
-        doc.text("Este relatório é informativo e não substitui avaliação médica.", 14, doc.lastAutoTable.finalY + 10);
+        doc.setFontSize(8);
+        doc.setTextColor(100);
+        // Centralized helper already adds it to the bottom of the page
+        // App.addPdfDisclaimer(doc); is called via didDrawPage above
 
         doc.save(`Crescimento_OMS_${new Date().toISOString().slice(0, 10)}.pdf`);
     };

@@ -76,6 +76,25 @@ const App = {
         v = v.replace('.', ',');
         v = v.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
         return v;
+    },
+
+    // Add legal disclaimer to PDF documents
+    addPdfDisclaimer: (doc) => {
+        const pageSize = doc.internal.pageSize;
+        const pageHeight = pageSize.height ? pageSize.height : pageSize.getHeight();
+        const pageWidth = pageSize.width ? pageSize.width : pageSize.getWidth();
+        const margin = 14;
+
+        doc.setFontSize(8);
+        doc.setTextColor(100); // Gray color
+        const text = "Resultados com caráter informativo e educacional. Valores e cálculos são estimativas e não substituem avaliação profissional.";
+
+        // Center text at the bottom
+        const textWidth = doc.getStringUnitWidth(text) * doc.internal.getFontSize() / doc.internal.scaleFactor;
+        const x = (pageWidth - textWidth) / 2;
+
+        doc.text(text, x, pageHeight - 10);
+        doc.setTextColor(0); // Reset to black for next elements
     }
 };
 

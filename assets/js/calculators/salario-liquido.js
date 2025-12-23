@@ -353,7 +353,10 @@ document.addEventListener('DOMContentLoaded', () => {
             startY: 75,
             theme: 'striped',
             headStyles: { fillColor: [50, 31, 219] },
-            styles: { fontSize: 8 }
+            styles: { fontSize: 8 },
+            didDrawPage: (data) => {
+                App.addPdfDisclaimer(doc);
+            }
         });
 
         doc.save(getFileName('pdf'));
