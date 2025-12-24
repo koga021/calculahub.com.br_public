@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Calculadora de Reserva de Emergência - Quanto poupar para imprevistos | CalculaHub | CalculaHub</title>
+    <meta name="description" content="Calcule quanto você precisa para sua reserva de emergência. Simule cenários de 3, 6 ou 12 meses de custo de vida. Grátis e online.">
+    <link rel="canonical" href="https://calculahub.com.br/financeiras/reserva-emergencia/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calculahub.com.br/financeiras/reserva-emergencia/">
+    <meta property="og:title" content="Calculadora de Reserva de Emergência - Quanto poupar para imprevistos | CalculaHub">
+    <meta property="og:description" content="Calcule quanto você precisa para sua reserva de emergência. Simule cenários de 3, 6 ou 12 meses de custo de vida. Grátis e online.">
+    <meta property="og:image" content="../../assets/images/og-default.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://calculahub.com.br/financeiras/reserva-emergencia/">
+    <meta property="twitter:title" content="Calculadora de Reserva de Emergência - Quanto poupar para imprevistos | CalculaHub">
+    <meta property="twitter:description" content="Calcule quanto você precisa para sua reserva de emergência. Simule cenários de 3, 6 ou 12 meses de custo de vida. Grátis e online.">
+    <meta property="twitter:image" content="../../assets/images/og-default.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../assets/images/favicon.png">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Calculadora de Reserva de Emergência - Quanto poupar para imprevistos",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "url": "https://calculahub.com.br/financeiras/reserva-emergencia/",
+      "description": "Calcule quanto você precisa para sua reserva de emergência. Simule cenários de 3, 6 ou 12 meses de custo de vida. Grátis e online.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL"
+      }
+    }
+    </script>
+    <!-- CoreUI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.2.0/dist/css/coreui.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3058170678556434"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Sidebar Template -->
+<div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+    <div class="sidebar-brand d-none d-md-flex">
+        <svg class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
+            <rect width="100%" height="100%" fill="#321fdb" />
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white"
+                font-size="20">CalculaHub</text>
+        </svg>
+        <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
+            <rect width="100%" height="100%" fill="#321fdb" />
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="20">CH</text>
+        </svg>
+    </div>
+    <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+        <li class="nav-item">
+            <a class="nav-link " href="../../index.html">
+                <i class="nav-icon fas fa-home"></i> Home
+            </a>
+        </li>
+        <li class="nav-title">Calculadoras</li>
+        <li class="nav-group show">
+            <a class="nav-link nav-group-toggle" href="#">
+                <i class="nav-icon fas fa-money-bill-wave"></i> Financeiras
+            </a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/juros-compostos/"><span class="nav-icon"></span> Juros
+                        Compostos</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/simulador-financiamento-price-sac/"><span
+                            class="nav-icon"></span> Financiamento (SAC/PRICE)</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/simulador-consorcio/"><span class="nav-icon"></span>
+                        Consórcio</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/juros-simples/"><span class="nav-icon"></span> Juros Simples</a>
+                </li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/primeiro-milhao/"><span class="nav-icon"></span> Primeiro
+                        Milhão</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/salario-liquido/"><span class="nav-icon"></span> Salário Líquido
+                        CLT</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/clt-x-pj/"><span class="nav-icon"></span> CLT x PJ</a></li>
+                <li class="nav-item"><a class="nav-link active"
+                        href="../../financeiras/reserva-emergencia/"><span class="nav-icon"></span> Reserva de
+                        Emergência</a></li>
+            </ul>
+        </li>
+        <li class="nav-group ">
+            <a class="nav-link nav-group-toggle" href="#">
+                <i class="nav-icon fas fa-heartbeat"></i> Saúde
+            </a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link " href="../../saude/imc/"><span
+                            class="nav-icon"></span> IMC</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../saude/curvas-crescimento/"><span class="nav-icon"></span> Curvas de
+                        Crescimento</a></li>
+            </ul>
+        </li>
+        <li class="nav-group ">
+            <a class="nav-link nav-group-toggle" href="#">
+                <i class="nav-icon fas fa-briefcase"></i> Trabalho
+            </a>
+            <ul class="nav-group-items">
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="../../trabalho-direitos-trabalhistas/rescisao-trabalhista/">
+                        <span class="nav-icon"></span> Rescisão Trabalhista
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+</div>
+
+    <div class="wrapper d-flex flex-column min-vh-100 bg-light">
+        <!-- Header Template -->
+<header class="header header-sticky mb-4 d-md-none">
+    <div class="container-fluid">
+        <button class="header-toggler px-md-0 me-md-3 d-flex d-md-none align-items-center justify-content-center"
+            type="button" data-coreui-toggle="sidebar" data-coreui-target="#sidebar">
+            <i class="fas fa-bars"></i>
+        </button>
+        <a class="header-brand d-md-none" href="#">CalculaHub</a>
+    </div>
+</header>
+
+        <div class="body flex-grow-1 px-3">
+            <div class="container-lg">
+                <div class="ad-slot ad-sidebar">
+    <!-- TOPO_anuncio -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3058170678556434" data-ad-slot="5209310594"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+<div class="calculator-container">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="h3 mb-3">Calculadora de Reserva de Emergência</h1>
+            <p class="text-muted">Planeje seu colchão de segurança financeira calculando quanto você precisa guardar com
+                base no seu custo de vida.</p>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-lg-8">
+            <div class="row g-4">
+                <div class="col-md-5">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-white py-3">
+                            <h2 class="h6 mb-0 fw-bold text-primary"><i class="fas fa-coins me-2"></i>Parâmetros</h2>
+                        </div>
+                        <div class="card-body">
+                            <form id="calcForm">
+                                <div class="mb-4">
+                                    <label for="monthlyExpenses" class="form-label fw-bold">Custo de Vida Mensal
+                                        (R$)</label>
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-text">R$</span>
+                                        <input type="text" class="form-control money-mask" id="monthlyExpenses"
+                                            placeholder="Ex: 3.000,00" required>
+                                    </div>
+                                    <div class="form-text mt-2">Soma de todos os seus gastos fixos e variáveis mensais.
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="coverageMonths" class="form-label fw-bold">Meses de Cobertura</label>
+                                    <select class="form-select form-select-lg" id="coverageMonths">
+                                        <option value="3">3 Meses (Essencial)</option>
+                                        <option value="6" selected>6 Meses (Segurança)</option>
+                                        <option value="12">12 Meses (Conforto)</option>
+                                        <option value="24">24 Meses (Máxima Proteção)</option>
+                                    </select>
+                                    <div class="form-text mt-2">O tempo que você quer estar protegido em caso de perda
+                                        total de renda.</div>
+                                </div>
+
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-primary btn-lg shadow-sm">Calcular
+                                        Reserva</button>
+                                    <button type="button" class="btn btn-outline-secondary" id="shareBtn">
+                                        <i class="fas fa-share-alt"></i> Compartilhar Link
+                                    </button>
+                                    <button type="reset" class="btn btn-outline-secondary" id="resetBtn">Limpar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-7">
+                    <div id="resultsArea" style="display: none;">
+                        <div class="card border-0 shadow-sm bg-primary text-white mb-4">
+                            <div class="card-body p-4 text-center">
+                                <h3 class="h6 text-uppercase fw-bold opacity-75 mb-3">Valor Total da Reserva</h3>
+                                <div class="display-4 fw-bold mb-2" id="resTotalReserve">R$ 0,00</div>
+                                <p class="mb-0 opacity-75">Este é o valor que você deve manter em ativos de liquidez
+                                    imediata.</p>
+                            </div>
+                        </div>
+
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-white py-3 border-0">
+                                <h3 class="h6 mb-0 fw-bold text-primary"><i class="fas fa-list-ul me-2"></i>Comparação
+                                    de Perfis</h3>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Perfil / Objetivo</th>
+                                            <th class="text-end">Reserva Necessária</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="resBreakdownTable">
+                                        <!-- Populated by JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="card-footer bg-white border-0 text-center py-3">
+                                <button class="btn btn-success js-export-pdf shadow-sm">
+                                    <i class="fas fa-file-pdf me-2"></i> Salvar Relatório em PDF
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info border-0 shadow-sm mt-4">
+                        <div class="d-flex">
+                            <i class="fas fa-lightbulb mt-1 me-3 fs-4"></i>
+                            <div>
+                                <h4 class="h6 fw-bold mb-1">Dica de Investimento</h4>
+                                <p class="small mb-0">A reserva de emergência deve ser aplicada em ativos de
+                                    <strong>baixo risco</strong> e <strong>liquidez imediata</strong> (D+0), como
+                                    Tesouro Selic, CDBs de liquidez diária ou fundos DI com taxa zero.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEO / Educational Content -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4 p-md-5 seo-content">
+                            <h2 class="h4 border-bottom pb-2 mb-4">O que é a Reserva de Emergência?</h2>
+                            <p>A reserva de emergência é o pilar fundamental de qualquer planejamento financeiro
+                                saudável. Imagine-a como um "seguro contra imprevistos" que você mesmo constrói. Sua
+                                principal função não é gerar riqueza, mas sim proteger seu patrimônio e sua
+                                tranquilidade mental.</p>
+                            <p>Em momentos de crise, como uma demissão inesperada, um problema de saúde na família ou um
+                                conserto urgente no carro, a reserva evita que você precise recorrer a empréstimos com
+                                juros altos (como cheque especial ou cartão de crédito) ou que precise resgatar
+                                investimentos de longo prazo em momentos desfavoráveis. Ter esse colchão financeiro
+                                permite que você tome decisões profissionais e pessoais com muito mais clareza e
+                                segurança.</p>
+
+                            <h3 class="h5 mt-4">Como calcular o valor ideal?</h3>
+                            <p>O cálculo base é simples: <strong>Custo de Vida Mensal x Número de Meses de
+                                    Cobertura</strong>. Para ser preciso, liste todos os seus gastos essenciais:
+                                moradia, alimentação, saúde, transporte, educação e seguros. Não se baseie apenas no seu
+                                salário líquido, mas sim em quanto você realmente gasta para manter seu padrão de vida
+                                básico.</p>
+
+                            <h3 class="h5 mt-4">Quantos meses devo guardar?</h3>
+                            <ul>
+                                <li><strong>3 meses (Essencial):</strong> Recomendado para pessoas com altíssima
+                                    estabilidade (como funcionários públicos estatutários) e poucos dependentes.</li>
+                                <li><strong>6 meses (Segurança):</strong> O padrão recomendado para a maioria dos
+                                    trabalhadores CLT. Oferece um fôlego realista para uma recolocação profissional sem
+                                    dívidas.</li>
+                                <li><strong>12 meses (Conforto):</strong> Essencial para autônomos, freelancers,
+                                    empreendedores ou profissionais com renda altamente variável. A volatilidade dos
+                                    ganhos exige uma proteção maior.</li>
+                                <li><strong>24 meses (Proteção Máxima):</strong> Recomendado para quem possui muitos
+                                    dependentes, despesas fixas muito elevadas ou trabalha em setores extremamente
+                                    instáveis.</li>
+                            </ul>
+
+                            <h3 class="h5 mt-4">Onde deixar o dinheiro?</h3>
+                            <p>Diferente de outros investimentos, aqui a rentabilidade não é a prioridade absoluta. A
+                                regra de ouro é: <strong>Liquidez Diária</strong> e <strong>Altíssima
+                                    Segurança</strong>.</p>
+                            <ul>
+                                <li><strong>Liquidez Diária (D+0):</strong> O dinheiro deve estar disponível no exato
+                                    momento em que você precisar.</li>
+                                <li><strong>Baixo Risco:</strong> O valor principal não pode oscilar negativamente.
+                                    Evite ações, fundos imobiliários ou qualquer ativo com volatilidade para esta
+                                    finalidade.</li>
+                                <li><strong>Onde aplicar:</strong> Tesouro Selic, CDBs de liquidez diária que rendam
+                                    pelo menos 100% do CDI de bancos sólidos ou fundos DI com taxa zero de
+                                    administração.</li>
+                            </ul>
+
+                            <h3 class="h5 mt-4">Quando usar a reserva?</h3>
+                            <p>Use apenas para situações que sejam <strong>imprevisíveis</strong>,
+                                <strong>urgentes</strong> e <strong>necessárias</strong>. Viagens, trocas de celular por
+                                lazer ou compras de oportunidade não são emergências. Manter a disciplina sobre o uso da
+                                reserva é tão importante quanto o hábito de construí-la.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar / Ads -->
+        <div class="col-lg-4">
+            <div class="ad-slot ad-top">
+    <!-- Lateral_esquerda_vertical -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3058170678556434" data-ad-slot="5635211225"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+        </div>
+    </div>
+</div>
+
+                <div class="row mt-5 mb-4">
+                    <div class="col-12">
+                        <div class="card bg-white border-0 shadow-sm">
+                            <div class="card-body text-center p-3">
+                                <p class="small text-muted mb-0">
+                                    <i class="fas fa-balance-scale me-2"></i>
+                                    <strong>Aviso Legal:</strong> Resultados com caráter informativo e educacional.
+                                    Valores e cálculos são estimativas e não substituem avaliação profissional.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Template -->
+<footer class="footer">
+    <div class="container-fluid text-center">
+        <div>CalculaHub © 2025.</div>
+    </div>
+</footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.2.0/dist/js/coreui.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <script src="../../assets/js/core.js"></script>
+    <script src="../../assets/js/share.js"></script>
+    
+    <script src="../../assets/js/calculators/reserva-emergencia.js"></script>
+    
+</body>
+
+</html>
