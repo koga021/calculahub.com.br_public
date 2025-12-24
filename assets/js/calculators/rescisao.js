@@ -308,36 +308,59 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // PDF 
     const exportPDF = () => {
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF();
+        try {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
 
-        doc.setFontSize(16);
-        doc.text("Simulação de Rescisão Trabalhista - CalculaHub", 14, 20);
-
-        doc.setFontSize(10);
-        doc.text(`Gerado em: ${new Date().toLocaleString()}`, 14, 28);
-        doc.text(`Tipo de Rescisão: ${window.resSummary.type}`, 14, 34);
-
-        doc.autoTable({
-            head: [['Verba/Desconto', 'Proventos (+)', 'Descontos (-)']],
-            body: window.simulationData,
-            startY: 45,
-            theme: 'striped',
-            headStyles: { fillColor: [50, 31, 219] },
-            didDrawPage: (data) => {
-                App.addPdfDisclaimer(doc);
+            if (!window.resSummary || !window.simulationData) {
+                alert("Por favor, realize o cálculo antes de exportar.");
+                return;
             }
-        });
 
-        const finalY = doc.lastAutoTable.finalY;
-        doc.setFont(undefined, 'bold');
-        doc.text(`Total Proventos: ${App.formatCurrency(window.resSummary.proventos)}`, 110, finalY + 10);
-        doc.text(`Total Descontos: ${App.formatCurrency(window.resSummary.descontos)}`, 110, finalY + 16);
-        doc.setFontSize(14);
-        doc.setTextColor(50, 31, 219);
-        doc.text(`LÍQUIDO ESTIMADO: ${App.formatCurrency(window.resSummary.net)}`, 110, finalY + 26);
+            doc.setFontSize(16);
+            doc.text("Simulação de Rescisão Trabalhista - CalculaHub", 14, 20);
 
-        doc.save(`CalculaHub_Rescisao_${new Date().getTime()}.pdf`);
+            doc.setFontSize(10);
+            doc.text(`Gerado em: ${new Date().toLocaleString()}`, 14, 28);
+            doc.text(`Tipo de Rescisão: ${window.resSummary.type}`, 14, 34);
+
+            doc.autoTable({
+                head: [['Verba/Desconto', 'Proventos (+)', 'Descontos (-)']],
+                body: window.simulationData,
+                startY: 45,
+                theme: 'striped',
+                headStyles: { fillColor: [50, 31, 219] },
+                didDrawPage: (data) => {
+                    App.addPdfDisclaimer(doc);
+                }
+            });
+
+            const finalY = doc.lastAutoTable.finalY || 45;
+            doc.setFont(undefined, 'bold');
+            doc.text(`Total Proventos: ${App.formatCurrency(window.resSummary.proventos)}`, 110, finalY + 10);
+            doc.text(`Total Descontos: ${App.formatCurrency(window.resSummary.descontos)}`, 110, finalY + 16);
+            doc.setFontSize(14);
+            doc.setTextColor(50, 31, 219);
+            doc.text(`LÍQUIDO ESTIMADO: ${App.formatCurrency(window.resSummary.net)}`, 110, finalY + 26);
+
+            const fileName = `CalculaHub_Rescisao_${new Date().getTime()}.pdf`;
+
+            // Mobile compatibility fix
+            if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                const blob = doc.output('blob');
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = fileName;
+                link.click();
+                setTimeout(() => URL.revokeObjectURL(url), 100);
+            } else {
+                doc.save(fileName);
+            }
+        } catch (error) {
+            console.error("Erro ao gerar PDF:", error);
+            alert("Ocorreu um erro ao gerar o PDF. Por favor, tente novamente.");
+        }
     };
 
     document.querySelectorAll('.js-export-pdf').forEach(btn => btn.addEventListener('click', exportPDF));
