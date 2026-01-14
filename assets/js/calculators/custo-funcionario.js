@@ -118,10 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Simpler approach for "Annual Projection" as requested: (Custo Mensal * 13.33)
         const estimatedAnnualCost = totalMonthlyCost * 13.333; // Approx 12 months + 13th + 1/3 vacation
 
-        // 4. Impact
-        const totalTaxesAndEncargos = (totalMonthlyCost - netSalary);
-        const taxImpactPercent = (totalTaxesAndEncargos / totalMonthlyCost) * 100;
-        const impactRatio = totalMonthlyCost / netSalary;
 
         // Update UI
         elResNetSalary.textContent = App.formatCurrency(netSalary);
@@ -162,6 +158,11 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             elAnnualCostContainer.style.display = 'none';
         }
+
+        // Impacto Real: Custo Total Mensal (com provisões se ativado) / Salário Líquido
+        const totalTaxesAndEncargos = (effectiveMonthlyCost - netSalary);
+        const taxImpactPercent = (totalTaxesAndEncargos / effectiveMonthlyCost) * 100;
+        const impactRatio = effectiveMonthlyCost / netSalary;
 
         elResTaxImpactPercent.textContent = `${taxImpactPercent.toFixed(1)}% em Impostos/Encargos`;
         elResImpactPhrase.innerHTML = `Para cada <strong>R$ 1,00</strong> que você recebe, o custo para a empresa é <strong>${App.formatCurrency(impactRatio)}</strong>`;
