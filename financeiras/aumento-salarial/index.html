@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Simulador de Aumento Salarial Real (CLT) - Ganho Líquido | CalculaHub | CalculaHub</title>
+    <meta name="description" content="Compare seu salário atual com o novo salário e veja o impacto real no seu bolso após impostos (INSS e IRRF). Grátis e online.">
+    <link rel="canonical" href="https://calculahub.com.br/financeiras/aumento-salarial/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calculahub.com.br/financeiras/aumento-salarial/">
+    <meta property="og:title" content="Simulador de Aumento Salarial Real (CLT) - Ganho Líquido | CalculaHub">
+    <meta property="og:description" content="Compare seu salário atual com o novo salário e veja o impacto real no seu bolso após impostos (INSS e IRRF). Grátis e online.">
+    <meta property="og:image" content="../../assets/images/og-default.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://calculahub.com.br/financeiras/aumento-salarial/">
+    <meta property="twitter:title" content="Simulador de Aumento Salarial Real (CLT) - Ganho Líquido | CalculaHub">
+    <meta property="twitter:description" content="Compare seu salário atual com o novo salário e veja o impacto real no seu bolso após impostos (INSS e IRRF). Grátis e online.">
+    <meta property="twitter:image" content="../../assets/images/og-default.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../assets/images/favicon.png">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Simulador de Aumento Salarial Real (CLT) - Ganho Líquido",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "url": "https://calculahub.com.br/financeiras/aumento-salarial/",
+      "description": "Compare seu salário atual com o novo salário e veja o impacto real no seu bolso após impostos (INSS e IRRF). Grátis e online.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL"
+      }
+    }
+    </script>
+    <!-- CoreUI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.2.0/dist/css/coreui.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3058170678556434"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Sidebar Template -->
+<div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+    <div class="sidebar-brand d-none d-md-flex">
+        <svg class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
+            <rect width="100%" height="100%" fill="#321fdb" />
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white"
+                font-size="20">CalculaHub</text>
+        </svg>
+        <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
+            <rect width="100%" height="100%" fill="#321fdb" />
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="20">CH</text>
+        </svg>
+    </div>
+    <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+        <li class="nav-item">
+            <a class="nav-link " href="../../index.html">
+                <i class="nav-icon fas fa-home"></i> Home
+            </a>
+        </li>
+        <li class="nav-title">Calculadoras</li>
+        <li class="nav-group show">
+            <a class="nav-link nav-group-toggle" href="#">
+                <i class="nav-icon fas fa-money-bill-wave"></i> Financeiras
+            </a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/juros-compostos/"><span class="nav-icon"></span> Juros
+                        Compostos</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/simulador-financiamento-price-sac/"><span
+                            class="nav-icon"></span> Financiamento (SAC/PRICE)</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/simulador-consorcio/"><span class="nav-icon"></span>
+                        Consórcio</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/juros-simples/"><span class="nav-icon"></span> Juros Simples</a>
+                </li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/primeiro-milhao/"><span class="nav-icon"></span> Primeiro
+                        Milhão</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/salario-liquido/"><span class="nav-icon"></span> Salário Líquido
+                        CLT</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/clt-x-pj/"><span class="nav-icon"></span> CLT x PJ</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="{{ROOT_PATH}financeiras/reserva-emergencia/"><span class="nav-icon"></span> Reserva de
+                        Emergência</a></li>
+                <li class="nav-item"><a class="nav-link active"
+                        href="../../financeiras/aumento-salarial/"><span class="nav-icon"></span> Aumento
+                        Salarial Real</a></li>
+            </ul>
+        </li>
+        <li class="nav-group ">
+            <a class="nav-link nav-group-toggle" href="#">
+                <i class="nav-icon fas fa-heartbeat"></i> Saúde
+            </a>
+            <ul class="nav-group-items">
+                <li class="nav-item"><a class="nav-link " href="../../saude/imc/"><span
+                            class="nav-icon"></span> IMC</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../saude/curvas-crescimento/"><span class="nav-icon"></span> Curvas de
+                        Crescimento</a></li>
+            </ul>
+        </li>
+        <li class="nav-group ">
+            <a class="nav-link nav-group-toggle" href="#">
+                <i class="nav-icon fas fa-briefcase"></i> Trabalho
+            </a>
+            <ul class="nav-group-items">
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="../../trabalho-direitos-trabalhistas/rescisao-trabalhista/">
+                        <span class="nav-icon"></span> Rescisão Trabalhista
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link "
+                        href="../../trabalho-direitos-trabalhistas/custo-funcionario/">
+                        <span class="nav-icon"></span> Custo do Funcionário
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+</div>
+
+    <div class="wrapper d-flex flex-column min-vh-100 bg-light">
+        <!-- Header Template -->
+<header class="header header-sticky mb-4 d-md-none">
+    <div class="container-fluid">
+        <button class="header-toggler px-md-0 me-md-3 d-flex d-md-none align-items-center justify-content-center"
+            type="button" data-coreui-toggle="sidebar" data-coreui-target="#sidebar">
+            <i class="fas fa-bars"></i>
+        </button>
+        <a class="header-brand d-md-none" href="#">CalculaHub</a>
+    </div>
+</header>
+
+        <div class="body flex-grow-1 px-3">
+            <div class="container-lg">
+                <!-- AdSense Top -->
+<div class="ad-slot ad-sidebar">
+    <!-- TOPO_anuncio -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3058170678556434" data-ad-slot="5209310594"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h1 class="h3 m-0">Simulador de Aumento Salarial Real (CLT)</h1>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info" role="alert">
+                    <i class="fas fa-info-circle"></i> Compare seu salário atual com o novo salário e descubra quanto do
+                    aumento realmente chega ao seu bolso após os impostos.
+                </div>
+
+                <form id="calcForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold">Salário Bruto Atual (R$)</label>
+                            <div class="input-group">
+                                <span class="input-group-text">R$</span>
+                                <input type="text" class="form-control money-mask" id="currentGross"
+                                    placeholder="Ex: 5.000,00" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold">Novo Salário Bruto (R$)</label>
+                            <div class="input-group">
+                                <span class="input-group-text">R$</span>
+                                <input type="text" class="form-control money-mask" id="newGross"
+                                    placeholder="Ex: 6.000,00" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label fw-bold">Número de Dependentes</label>
+                            <input type="number" class="form-control" id="dependents" min="0" max="20" value="0">
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4">
+                        <button type="submit" class="btn btn-primary text-white px-4">Calcular Aumento Real</button>
+                        <button type="reset" class="btn btn-outline-danger" id="resetBtn">Limpar</button>
+                    </div>
+                </form>
+
+                <div id="resultsArea" style="display: none;">
+                    <div class="row">
+                        <!-- Card 1: Antes -->
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100 border-0 shadow-sm bg-light">
+                                <div class="card-body">
+                                    <h5 class="card-title h6 text-uppercase text-muted">Antes do Aumento</h5>
+                                    <div class="mb-2">Bruto: <span class="fw-bold" id="resCurrentGross">R$ 0,00</span>
+                                    </div>
+                                    <div class="h4 fw-bold text-success mb-0" id="resCurrentNet">R$ 0,00</div>
+                                    <small class="text-muted">Salário Líquido</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Depois -->
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100 border-0 shadow-sm bg-light border-primary"
+                                style="border-left: 5px solid !important;">
+                                <div class="card-body">
+                                    <h5 class="card-title h6 text-uppercase text-primary">Depois do Aumento</h5>
+                                    <div class="mb-2">Bruto: <span class="fw-bold" id="resNewGross">R$ 0,00</span></div>
+                                    <div class="h4 fw-bold text-success mb-0" id="resNewNet">R$ 0,00</div>
+                                    <small class="text-muted">Salário Líquido</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Impacto Real -->
+                    <div class="card border-0 shadow-sm mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title h6 text-uppercase text-muted border-bottom pb-2 mb-3">Impacto Real do
+                                Aumento</h5>
+                            <div class="row text-center">
+                                <div class="col-6 col-md-3 mb-3 mb-md-0">
+                                    <div class="text-muted small">Aumento Bruto</div>
+                                    <div class="h5 fw-bold" id="resDeltaGross">R$ 0,00</div>
+                                </div>
+                                <div class="col-6 col-md-3 mb-3 mb-md-0">
+                                    <div class="text-muted small">Aumento Líquido</div>
+                                    <div class="h5 fw-bold text-success" id="resDeltaNet">R$ 0,00</div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="text-muted small">Ganho Real (%)</div>
+                                    <div class="h5 fw-bold text-primary" id="resPercentNet">0,00%</div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="text-muted small">Impostos (INSS/IRRF)</div>
+                                    <div class="h5 fw-bold text-danger" id="resTaxOnIncrease">R$ 0,00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Análise Final -->
+                    <div class="card border-0 shadow-sm mb-4 bg-dark text-white text-center">
+                        <div class="card-body p-4">
+                            <h5 class="card-title h6 text-uppercase opacity-75">Resumo da Simulação</h5>
+                            <p class="lead mb-0" id="resFinalAnalysis">Seu salário bruto aumentou R$ 0,00, mas seu
+                                salário líquido aumentou apenas R$ 0,00.</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center mb-4">
+                        <button class="btn btn-success js-export-pdf shadow-sm px-4">
+                            <i class="fas fa-file-pdf me-2"></i> Salvar Simulação em PDF
+                        </button>
+                    </div>
+
+                    <div class="alert alert-light border-0 small text-muted text-center" role="alert">
+                        ⚠️ Para salários de até R$ 5.000, o Imposto de Renda é considerado isento conforme regra
+                        vigente.<br>
+                        ⚠️ Valores aproximados, para fins educacionais.<br>
+                        📌 Os descontos podem variar conforme dependentes e regras fiscais.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Content -->
+        <div class="card mb-4 shadow-sm border-0">
+            <div class="card-body p-4 p-md-5 seo-content">
+                <h2 class="h4 border-bottom pb-2 mb-4">Por que o aumento líquido é menor que o bruto?</h2>
+                <p>Muitas vezes, ao receber uma proposta de aumento salarial, focamos apenas no valor bruto. No entanto,
+                    devido à natureza progressiva dos impostos no Brasil (INSS e IRRF), uma fatia maior desse novo valor
+                    pode ser retida na fonte.</p>
+
+                <h3 class="h5 mt-4">Impacto do IRRF e INSS</h3>
+                <p>Como as alíquotas do Imposto de Renda e do INSS aumentam conforme o salário sobe, é comum que o
+                    trabalhador mude de faixa tributária ao receber um aumento. Isso faz com que a porcentagem de
+                    imposto paga sobre o valor adicional seja proporcionalmente maior do que a paga sobre o salário
+                    anterior.</p>
+
+                <h3 class="h5 mt-4">Como usar este simulador?</h3>
+                <ol>
+                    <li>Informe seu <strong>salário bruto atual</strong> (conforme sua carteira ou holerite).</li>
+                    <li>Informe o <strong>novo salário bruto</strong> que você recebeu ou está negociando.</li>
+                    <li>Informe o número de <strong>dependentes</strong> para um cálculo mais preciso do IRRF.</li>
+                    <li>Clique em <strong>Calcular</strong> para ver a mágica (ou a realidade) dos impostos.</li>
+                </ol>
+
+                <p class="mt-4">Este simulador ajuda você a ter expectativas realistas durante uma negociação salarial,
+                    permitindo saber exatamente quanto de dinheiro novo entrará na sua conta todos os meses.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-lg-4">
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-white fw-bold">Calculadoras Relacionadas</div>
+            <div class="list-group list-group-flush">
+                <a href="../salario-liquido/" class="list-group-item list-group-item-action">Salário Líquido CLT</a>
+                <a href="../clt-x-pj/" class="list-group-item list-group-item-action">CLT x PJ</a>
+                <a href="../../trabalho-direitos-trabalhistas/custo-funcionario/"
+                    class="list-group-item list-group-item-action">Custo do Funcionário</a>
+            </div>
+        </div>
+        <div class="ad-slot ad-top">
+    <!-- Lateral_esquerda_vertical -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3058170678556434" data-ad-slot="5635211225"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+    </div>
+</div>
+
+                <div class="row mt-5 mb-4">
+                    <div class="col-12">
+                        <div class="card bg-white border-0 shadow-sm">
+                            <div class="card-body text-center p-3">
+                                <p class="small text-muted mb-0">
+                                    <i class="fas fa-balance-scale me-2"></i>
+                                    <strong>Aviso Legal:</strong> Resultados com caráter informativo e educacional.
+                                    Valores e cálculos são estimativas e não substituem avaliação profissional.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Template -->
+<footer class="footer">
+    <div class="container-fluid text-center">
+        <div>CalculaHub © 2025.</div>
+    </div>
+</footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@4.2.0/dist/js/coreui.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <script src="../../assets/js/core.js"></script>
+    <script src="../../assets/js/share.js"></script>
+    
+    <script src="../../assets/js/calculators/aumento-salarial.js"></script>
+    
+</body>
+
+</html>

@@ -96,8 +96,11 @@
                 <li class="nav-item"><a class="nav-link "
                         href="../../financeiras/clt-x-pj/"><span class="nav-icon"></span> CLT x PJ</a></li>
                 <li class="nav-item"><a class="nav-link "
-                        href="../../financeiras/reserva-emergencia/"><span class="nav-icon"></span> Reserva de
+                        href="{{ROOT_PATH}financeiras/reserva-emergencia/"><span class="nav-icon"></span> Reserva de
                         Emergência</a></li>
+                <li class="nav-item"><a class="nav-link "
+                        href="../../financeiras/aumento-salarial/"><span class="nav-icon"></span> Aumento
+                        Salarial Real</a></li>
             </ul>
         </li>
         <li class="nav-group ">
@@ -261,6 +264,10 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-12 text-center mt-2">
+                        <small class="text-muted">⚠️ Para salários de até R$ 5.000, o Imposto de Renda é considerado
+                            isento conforme regra vigente.</small>
+                    </div>
                 </div>
 
                 <!-- Annual Table -->
@@ -319,6 +326,12 @@
                 <h3>2. IRRF (Imposto de Renda Retido na Fonte)</h3>
                 <p>O IR também é progressivo e calculado sobre a base: <code>Salário Bruto - INSS - Dependentes</code>
                 </p>
+                <div class="alert alert-success">
+                    <strong>✓ Regra de Isenção Prática:</strong> Para salários brutos de até <strong>R$
+                        5.000,00</strong>, o IRRF é considerado <strong>isento</strong> conforme regra vigente do
+                    CalculaHub.
+                </div>
+                <p>Para valores acima de R$ 5.000,00, aplicam-se as faixas:</p>
                 <ul>
                     <li>Até R$ 2.259,20: <strong>Isento</strong></li>
                     <li>De R$ 2.259,21 até R$ 2.826,65: <strong>7,5%</strong> (dedução: R$ 169,44)</li>
@@ -336,13 +349,13 @@
                     mais vantajoso que o cálculo normal.</p>
 
                 <h3>Exemplo Prático</h3>
-                <p>Salário bruto: <strong>R$ 5.000,00</strong> | Dependentes: <strong>1</strong></p>
+                <p>Salário bruto: <strong>R$ 6.000,00</strong> | Dependentes: <strong>1</strong></p>
                 <ol>
-                    <li>INSS: R$ 1.412,00 × 7,5% + R$ 1.254,68 × 9% + R$ 1.333,35 × 12% + R$ 999,97 × 14% = <strong>R$
-                            413,42</strong></li>
-                    <li>Base IR: R$ 5.000,00 - R$ 413,42 - R$ 189,59 = <strong>R$ 4.396,99</strong></li>
-                    <li>IRRF: R$ 4.396,99 × 22,5% - R$ 662,77 = <strong>R$ 326,55</strong></li>
-                    <li>Salário Líquido: R$ 5.000,00 - R$ 413,42 - R$ 326,55 = <strong>R$ 4.260,03</strong></li>
+                    <li>INSS: R$ 1.412,00 × 7,5% + R$ 1.254,68 × 9% + R$ 1.333,35 × 12% + R$ 1.999,97 × 14% = <strong>R$
+                            553,42</strong></li>
+                    <li>Base IR: R$ 6.000,00 - R$ 553,42 - R$ 189,59 = <strong>R$ 5.256,99</strong></li>
+                    <li>IRRF: R$ 5.256,99 × 27,5% - R$ 896,00 = <strong>R$ 549,67</strong></li>
+                    <li>Salário Líquido: R$ 6.000,00 - R$ 553,42 - R$ 549,67 = <strong>R$ 4.896,91</strong></li>
                 </ol>
 
                 <div class="alert alert-info mt-4">
