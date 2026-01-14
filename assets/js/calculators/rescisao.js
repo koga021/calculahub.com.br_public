@@ -200,7 +200,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 descontos.push({ label: `INSS (Competência ${compStr})`, value: totalINSS });
             }
 
-            const totalIRRF = calculateIRRF(totalTributavel, totalINSS, depCount);
+            let totalIRRF = calculateIRRF(totalTributavel, totalINSS, depCount);
+
+            // Regra de Isenção Prática: Bruto <= R$ 5.000,00 -> IRRF = 0
+            if (salary <= 5000) {
+                totalIRRF = 0;
+            }
+
             if (totalIRRF > 0) {
                 descontos.push({ label: `IRRF (Competência ${compStr})`, value: totalIRRF });
             }

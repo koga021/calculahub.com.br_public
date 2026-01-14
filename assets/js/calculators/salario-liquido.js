@@ -145,7 +145,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const irBase = grossSalary - inss.total - dependentDeduction;
 
         // Calculate IRRF
-        const irrf = calculateIRRF(irBase);
+        let irrf = calculateIRRF(irBase);
+
+        // Regra de Isenção Prática: Bruto <= R$ 5.000,00 -> IRRF = 0
+        if (grossSalary <= 5000) {
+            irrf.total = 0;
+        }
 
         // Total discounts
         const totalDiscounts = inss.total + irrf.total + otherDiscounts + transportValue;

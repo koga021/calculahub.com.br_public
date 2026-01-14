@@ -96,7 +96,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const inssEmployee = calculateINSS(gross);
         const dependentDeduction = dependents * DEPENDENT_DEDUCTION;
         const irBase = Math.max(0, gross - inssEmployee - dependentDeduction);
-        const irrfEmployee = calculateIRRF(irBase);
+        let irrfEmployee = calculateIRRF(irBase);
+
+        // Regra de Isenção Prática: Bruto <= R$ 5.000,00 -> IRRF = 0
+        if (gross <= 5000) {
+            irrfEmployee = 0;
+        }
+
         const netSalary = gross - inssEmployee - irrfEmployee;
 
         // 2. Company Calculations

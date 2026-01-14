@@ -86,7 +86,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const cltInss = calculateINSS(cltGross);
         const cltIrBase = Math.max(0, cltGross - cltInss - (cltDep * DEPENDENT_DEDUCTION));
-        const cltIrrf = calculateIRRF(cltIrBase);
+        let cltIrrf = calculateIRRF(cltIrBase);
+
+        // Regra de Isenção Prática: Bruto <= R$ 5.000,00 -> IRRF = 0
+        if (cltGross <= 5000) {
+            cltIrrf = 0;
+        }
+
         const cltNet = cltGross - cltInss - cltIrrf;
         const cltFGTS = cltGross * 0.08;
         const cltTotalMensal = cltNet + cltFGTS + cltBen;
